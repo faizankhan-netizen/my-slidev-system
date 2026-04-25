@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
+
+/* ================================================================
+   CYBER STYLE: Terminal / Matrix / Ultra-Tech Aesthetic
+   ================================================================ */
+
+/* === SCANLINE ANIMATION === */
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes terminal-cursor {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+@keyframes glitch-flicker {
+  0%, 100% { opacity: 1; }
+  33%      { opacity: 0.95; }
+  66%      { opacity: 0.98; }
+}
+
+.slidev-layout.style-cyber {
+  --bg-primary: 222 10% 2%;
+  --bg-card: 222 10% 5%;
+  --text-main: 142 70% 50%;
+  --border-main: 142 70% 50%;
+  --accent-primary: 142 76% 36%;
+  --accent-secondary: 142 70% 50%;
+  --accent-tertiary: 142 70% 80%;
+  
+  font-family: 'JetBrains Mono', monospace !important;
+  color: hsl(var(--text-main)) !important;
+  padding: 3.5rem !important;
+  position: relative;
+  overflow: hidden !important;
+  animation: glitch-flicker 0.2s infinite alternate ease-in-out;
+
+  /* Matrix Mesh Gradient */
+  background:
+    radial-gradient(ellipse 80% 50% at 50%  -10%, hsl(142 70% 50% / 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 60% at 0%    100%, hsl(142 70% 30% / 0.10) 0%, transparent 60%),
+    hsl(var(--bg-primary)) !important;
+}
+
+/* === VERTICAL SCANLINES (::before) === */
+.slidev-layout.style-cyber::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    hsl(var(--text-main) / 0.03) 50%
+  );
+  background-size: 100% 4px;
+}
+
+/* === MOVING SCANLINE BAR (::after) === */
+.slidev-layout.style-cyber::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    hsl(var(--text-main) / 0.05),
+    transparent
+  );
+  z-index: 0;
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+}
+
+/* === GLASSMORPHISM TERMINAL CARDS === */
+.style-cyber .card {
+  position: relative;
+  background: hsl(var(--bg-card) / 0.85) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid hsl(var(--border-main) / 0.3);
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow:
+    0 0 20px hsl(var(--accent-primary) / 0.15),
+    inset 0 0 10px hsl(var(--accent-primary) / 0.05);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  z-index: 1;
+}
+
+/* === CORNER ACCENTS on cards === */
+.style-cyber .card::before {
+  content: '[';
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.style-cyber .card::after {
+  content: ']';
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.style-cyber .card:hover {
+  transform: translateY(-2px);
+  background: hsl(var(--bg-card) / 0.95) !important;
+  border-color: hsl(var(--border-main) / 0.8);
+  box-shadow:
+    0 0 35px hsl(var(--accent-primary) / 0.25),
+    inset 0 0 15px hsl(var(--accent-primary) / 0.1);
+}
+
+/* === TERMINAL PILL === */
+.style-cyber .pill {
+  display: inline-block !important;
+  width: auto !important;
+  background: transparent !important;
+  color: hsl(var(--text-main));
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 4px 12px;
+  border: 1px solid hsl(var(--border-main) / 0.5);
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Flashing cursor after the pill text */
+.style-cyber .pill::after {
+  content: '_';
+  animation: terminal-cursor 1s step-end infinite;
+}
+
+.style-cyber h1, .style-cyber h2 {
+  color: hsl(var(--text-main)) !important;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 12px hsl(var(--text-main) / 0.4);
+}
+
+/* Terminal prompt effect for headings */
+.style-cyber h1::before {
+  content: '> ';
+  opacity: 0.6;
+}
+
+.style-cyber .stat {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  color: hsl(var(--accent-tertiary)) !important;
+  text-shadow: 0 0 20px hsl(var(--accent-tertiary) / 0.5);
+}

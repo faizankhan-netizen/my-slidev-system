@@ -5,6 +5,8 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
+    "remote": "slidev --remote",
+    "tunnel": "slidev --remote --tunnel",
     "export": "slidev export",
     "optimize": "node scripts/optimize-assets.js"
   },

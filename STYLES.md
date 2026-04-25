@@ -39,6 +39,36 @@ This document is used by agents to select the correct visual archetype based on 
 *   **Pill**: Amber label with square corners.
 *   **Best For**: How-to guides, field training, mushroom farming, manual workflows.
 
+### 4. `style-cyber` — The Terminal
+*   **Target**: Developers, AI Researchers, Technical Visionaries.
+*   **Vibe**: High-Tech, Logic-First, Retro-Futuristic.
+*   **Background**: Absolute black (`222 10% 2%`) with Matrix-green mesh gradients.
+*   **Texture**: Animated vertical scanlines + CRT monitor flicker.
+*   **Cards**: Minimalist terminal blocks with bracket accents `[...]` and glow effects.
+*   **Typography**: `JetBrains Mono` — high-fidelity mono-space. Headings have `> ` prompts.
+*   **Pill**: Outlined label with a flashing terminal cursor `_`.
+*   **Best For**: Technical demos, software architecture, AI research, cybersecurity.
+
+### 5. `style-eco` — The Sustainable
+*   **Target**: Environmentalists, Wellness Coaches, Organic Brands, Agriculturalists.
+*   **Vibe**: Grounded, Calm, Organic.
+*   **Background**: Soft Sage (`120 15% 95%`) with cream & forest-green mesh gradients.
+*   **Texture**: Recycled-paper grain + masked organic dot textures.
+*   **Cards**: Large-radius tactile cards (24px) with floating leaf accents `🍃`.
+*   **Typography**: `Lora` — elegant serif for an organic, established tone.
+*   **Pill**: Rounded stadium label with a soft green background tint.
+*   **Best For**: Sustainability reports, nature docs, wellness guides, organic farming.
+
+### 6. `style-luxury` — The Visionary
+*   **Target**: Luxury Brands, High-End Product Launches, Visionary Keynotes.
+*   **Vibe**: Premium, Editorial, Sophisticated.
+*   **Background**: Midnight Obsidian (`0 0% 5%`) with gold-dust mesh gradients.
+*   **Texture**: Vertical silk-line texture + animated light-leak shimmers.
+*   **Cards**: Sharp-edged glass blocks with animated gold-trim top borders.
+*   **Typography**: `Cormorant Garamond` — light-weight serif for an editorial feel.
+*   **Pill**: Minimalist underline label with high letter-spacing.
+*   **Best For**: Product reveals, investor keynotes, premium vision statements.
+
 ---
 
 ## 🧭 Decision Quick-Reference

@@ -179,6 +179,7 @@ We have pre-designed CSS contexts in the `styles/` folder. Apply them to match y
 | Read a `.pptx` for style reference | Run `python extract_pptx.py <file.pptx>` |
 | Preview slides | `npm run dev` → open `http://localhost:3030` |
 | Verify an icon exists | `python -c "import json; data=json.load(open('node_modules/@iconify-json/carbon/icons.json')); print([k for k in data['icons'].keys() if 'keyword' in k])"` |
+| Launch Remote Control | `npm run remote` → Press `Ctrl+R` in deck |
 | Debug a broken slide | Check `slides.md__slidev_N.md` line numbers in Vite error → trace back to `slides.md` |
 
 ---
@@ -220,6 +221,21 @@ Every slide must have a **visual element** — background shape, icon, image, or
 | **Corporate/Government** | Deep: Navy + Gold + Off-white | `quote`, `fact`, data tables | Premium, no gimmicks |
 | **Developers/Technical** | Dark: Charcoal + Accent + Code blocks | `two-cols` with code, terminal aesthetic | Clean, precise |
 | **Awareness/Social** | Calm: Sage + Cream + Warm Accent | `center`, flowing text, imagery | Emotional, spacious |
+| **Luxury** | Dark: Midnight Obsidian + Gold | `split` with cinematic images | Sophisticated, visionary |
+
+---
+
+## 📡 Mission Control: Remote Navigation
+
+The engine features a built-in "Mission Control" portal for mobile remote control.
+
+### How to use:
+1. **Launch**: Run `npm run remote` in your terminal. This exposes the presentation to your local network.
+2. **Access Portal**: Press `Ctrl+R` on your desktop browser while the presentation is open.
+3. **Connect**: Scan the generated QR code with your mobile device.
+4. **Command**: Once open on mobile, a **Tactile Remote Interface** (Luxury Style) will appear with large Next/Back buttons for seamless navigation.
+
+**Safety Note**: Both devices must be connected to the same local WiFi network for the portal to bridge.
 
 ---
 

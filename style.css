@@ -1,6 +1,9 @@
 @import './styles/business.css';
 @import './styles/school.css';
 @import './styles/workshop.css';
+@import './styles/cyber.css';
+@import './styles/eco.css';
+@import './styles/luxury.css';
 
 /* ================================================================
    GLOBAL OVERRIDES

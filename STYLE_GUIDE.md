@@ -53,6 +53,7 @@ Each archetype imports a premium Google Font. Never override unless instructed:
 | **Business** | `Inter` | Sharp, credible, corporate |
 | **School** | `Outfit` | Geometric, vibrant, accessible |
 | **Workshop** | `Space Grotesk` | Pragmatic, technical, instructional |
+| **Cyber** | `JetBrains Mono` | High-tech, logical, terminal |
 
 ### Sizing Rules
 | Element | Size | Weight |
@@ -80,13 +81,14 @@ Break presentations into a 4-part narrative structure:
 Each archetype has atmospheric `radial-gradient()` blobs. These are animated with `cosmos-breathe` (15s cycle) in the School archetype.
 
 ### Layer 2: Background Texture
-A masked dot-grid (School/Business) or graph-paper grid (Workshop) adds professional depth.
+A masked dot-grid (School/Business) or graph-paper grid (Workshop) adds professional depth. Cyber uses animated scanlines.
 
 ### Layer 3: Decorative Accents
 Pseudo-elements (`::before`/`::after`) create:
 - **School**: Floating neon particles (cyan + pink)
 - **Business**: Geometric corner accent (curved lines)
 - **Workshop**: Drafting ruler with tick marks, card tape strips
+- **Cyber**: Bracket accents `[...]` and terminal cursor `_`
 
 ### Layer 4: Content
 All content sits at `z-index: 1` above decorative layers. Cards use multi-layered `box-shadow` for realistic depth.
@@ -96,13 +98,13 @@ All content sits at `z-index: 1` above decorative layers. Cards use multi-layere
 ## 6. Glassmorphism Standards
 
 ### Card Properties
-| Property | School | Business | Workshop |
-|---|---|---|---|
-| `backdrop-filter` | `blur(18px) saturate(160%)` | `blur(16px) saturate(150%)` | `blur(14px) saturate(140%)` |
-| Background | `hsl(--bg-card / 0.08)` | `hsl(--bg-card / 0.68)` | `hsl(--bg-card / 0.72)` |
-| Border | Transparent + outline glow | Gradient top border | Dashed border |
-| Shadow | 3-tier + cyan inner glow | 3-tier corporate | 3-tier angled tactile |
-| Hover | Scale 1.015 + glow | Lift -2px | Rotate to 0° + lift |
+| Property | School | Business | Workshop | Cyber |
+|---|---|---|---|---|
+| `backdrop-filter` | `blur(18px) saturate(160%)` | `blur(16px) saturate(150%)` | `blur(14px) saturate(140%)` | `blur(12px) saturate(180%)` |
+| Background | `hsl(--bg-card / 0.08)` | `hsl(--bg-card / 0.68)` | `hsl(--bg-card / 0.72)` | `hsl(--bg-card / 0.85)` |
+| Border | Transparent + outline glow | Gradient top border | Dashed border | Thin green + glow |
+| Shadow | 3-tier + cyan inner glow | 3-tier corporate | 3-tier angled tactile | Glow-pulse + inset |
+| Hover | Scale 1.015 + glow | Lift -2px | Rotate to 0° + lift | Border-glow + lift |
 
 ---
 
