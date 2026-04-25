@@ -74,7 +74,7 @@ class: slide-green
       <div style="font-size:1.1rem;color:#A7F3D0;font-weight:700">Wealth from Waste • Big Profit</div>
     </div>
     <div style="flex:0.8; border-radius:24px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.3); border:4px solid rgba(255,255,255,0.1)">
-      <img src="/cover.png" style="width:100%; height:240px; object-fit:cover" />
+      <img src="/cover.webp" style="width:100%; height:240px; object-fit:cover" />
     </div>
   </div>
 </div>

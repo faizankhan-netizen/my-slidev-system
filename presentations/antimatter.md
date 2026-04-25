@@ -71,7 +71,7 @@ body, #app, .slidev-layout {
       <div style="font-size:1.05rem;color:#94A3B8;line-height:1.5; max-width:400px">Explore the most expensive substance on Earth and the mystery of our missing universe.</div>
     </div>
     <div style="flex:0.8; border-radius:30px; overflow:hidden; box-shadow:0 25px 60px rgba(139,92,246,0.3); border:1px solid rgba(139,92,246,0.5)">
-      <img src="/antimatter_cover.png" style="width:100%; height:auto; object-fit:cover" />
+      <img src="/antimatter_cover.webp" style="width:100%; height:auto; object-fit:cover" />
     </div>
   </div>
 </div>

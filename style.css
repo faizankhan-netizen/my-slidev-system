@@ -1,0 +1,32 @@
+@import './styles/business.css';
+@import './styles/school.css';
+@import './styles/workshop.css';
+
+/* ================================================================
+   GLOBAL OVERRIDES
+   These rules ensure our archetype backgrounds always render
+   by forcing Slidev's default theme backgrounds to be transparent.
+   ================================================================ */
+
+/* Nuke the default theme background so our mesh gradients show */
+.slidev-page,
+.slide-container,
+.slide-content,
+#slide-content {
+  background: transparent !important;
+}
+
+/* Overflow hidden prevents gradient blobs from causing scrollbars */
+.slidev-layout {
+  overflow: hidden !important;
+  position: relative;
+}
+
+/* Safe Zone padding wrapper */
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}

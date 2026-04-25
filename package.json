@@ -5,13 +5,17 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export": "slidev export",
+    "optimize": "node scripts/optimize-assets.js"
   },
   "dependencies": {
     "@slidev/cli": "^52.14.2",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
-    "vue": "^3.5.29"
+    "echarts": "^6.0.0",
+    "sharp": "^0.34.5",
+    "vue": "^3.5.29",
+    "vue-echarts": "^8.0.1"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.2.20"
