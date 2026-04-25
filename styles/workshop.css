@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800;900&display=swap');
+
+/* ================================================================
+   WORKSHOP STYLE: Warm Paper / Blueprint + Decorative Elements
+   ================================================================ */
+
+/* === DRAFTING LINE ANIMATION === */
+@keyframes draft-tick {
+  0%, 100% { opacity: 0.2; }
+  50%      { opacity: 0.45; }
+}
+
+@keyframes tape-sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(1deg); }
+}
+
+.slidev-layout.style-workshop {
+  --bg-primary: 48 100% 96%;
+  --bg-card: 0 0% 100%;
+  --text-main: 21 91% 14%;
+  --border-main: 32 94% 44%;
+  --accent-primary: 32 94% 44%;
+  --accent-secondary: 46 97% 65%;
+  --accent-tertiary: 38 92% 50%;
+  
+  font-family: 'Space Grotesk', sans-serif !important;
+  color: hsl(var(--text-main)) !important;
+  padding: 3.5rem !important;
+  position: relative;
+  overflow: hidden !important;
+
+  /* Warm Paper Mesh Gradient */
+  background:
+    radial-gradient(ellipse 80% 55% at 5%   0%,   hsl(32  94% 44% / 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 55% at 95%  100%,  hsl(46  97% 65% / 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 35% at 50%  50%,   hsl(38  92% 50% / 0.08) 0%, transparent 60%),
+    hsl(var(--bg-primary)) !important;
+}
+
+/* === DRAFTING RULER MARKS (::before) === */
+.slidev-layout.style-workshop::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  animation: draft-tick 5s ease-in-out infinite;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 38px,
+      hsl(var(--border-main) / 0.25) 38px,
+      hsl(var(--border-main) / 0.25) 39px
+    );
+  border-right: 2px solid hsl(var(--border-main) / 0.18);
+}
+
+/* === GRAPH PAPER GRID (::after) === */
+.slidev-layout.style-workshop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.3;
+  background-image:
+    linear-gradient(hsl(var(--border-main) / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border-main) / 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 40%, transparent 85%);
+}
+
+/* Blueprint Dark Mode */
+html.dark .slidev-layout.style-workshop {
+  --bg-primary: 222 47% 11%;
+  --bg-card: 217 33% 17%;
+  --text-main: 210 40% 98%;
+  --border-main: 213 97% 68%;
+  --accent-primary: 217 91% 60%;
+  --accent-secondary: 213 97% 68%;
+  --accent-tertiary: 211 96% 78%;
+
+  /* Blueprint Mesh Gradient */
+  background:
+    radial-gradient(ellipse 75% 50% at 5%   5%,   hsl(217 91% 60% / 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 55% at 95%  95%,   hsl(213 97% 68% / 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 50%  50%,   hsl(211 96% 78% / 0.08) 0%, transparent 60%),
+    hsl(var(--bg-primary)) !important;
+}
+
+/* === GLASSMORPHISM STICKY NOTES === */
+.style-workshop .card {
+  position: relative;
+  background: hsl(var(--bg-card) / 0.72) !important;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 2px dashed hsl(var(--border-main) / 0.65);
+  border-radius: 2px;
+  padding: 1.5rem;
+  padding-top: 1.8rem;
+  transform: rotate(-0.8deg);
+  /* Multi-layered tactile shadow */
+  box-shadow:
+    2px 2px 6px hsl(var(--text-main) / 0.08),
+    4px 4px 16px hsl(var(--text-main) / 0.10),
+    6px 8px 28px hsl(var(--text-main) / 0.08),
+    inset 0 1px 0 hsl(0 0% 100% / 0.35),
+    inset 0 -2px 0 hsl(0 0% 0% / 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  z-index: 1;
+}
+
+/* === TAPE STRIP ACCENT on cards === */
+.style-workshop .card::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 14px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--accent-secondary) / 0.4),
+    hsl(var(--accent-secondary) / 0.6),
+    hsl(var(--accent-secondary) / 0.4)
+  );
+  border-radius: 0 0 4px 4px;
+  border: 1px solid hsl(var(--accent-secondary) / 0.2);
+  border-top: none;
+  animation: tape-sway 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.style-workshop .card:hover {
+  transform: rotate(0deg) translateY(-3px);
+  background: hsl(var(--bg-card) / 0.85) !important;
+  box-shadow:
+    3px 3px 8px hsl(var(--text-main) / 0.10),
+    6px 8px 24px hsl(var(--text-main) / 0.12),
+    10px 14px 40px hsl(var(--text-main) / 0.10),
+    inset 0 1px 0 hsl(0 0% 100% / 0.40);
+}
+
+/* === FROSTED LABEL PILL === */
+.style-workshop .pill {
+  display: inline-block !important;
+  width: auto !important;
+  background: hsl(var(--accent-primary) / 0.92) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1px solid hsl(var(--accent-primary) / 0.4);
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.style-workshop h1, .style-workshop h2 {
+  color: hsl(var(--text-main)) !important;
+  text-transform: uppercase;
+  border-bottom: 3px solid hsl(var(--accent-secondary));
+  display: inline-block;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+}
+
+.style-workshop .activity-box {
+  background: hsl(0 0% 0% / 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--accent-tertiary) / 0.55);
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}

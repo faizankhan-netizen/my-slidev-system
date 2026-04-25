@@ -1,20 +1,29 @@
 # Agent Instructions: Slidev Presentation Engine 🤖
-*Last Updated: 2026-04-25*
+*Last Updated: 2026-04-26*
 
-This repository is a high-performance presentation engine built on **Slidev**. It is designed for creating premium, Indocentric, and interactive slide decks for educational and business seminars.
+This repository is a **cinematic presentation engine** built on Slidev. It produces premium, Indocentric, and interactive slide decks for educational and business seminars — powered by a tokenized HSL color architecture, glassmorphism, and animated design elements.
 
 ---
 
 ## 🏗️ Repository Architecture
 
-| File | Role | Priority |
-|------|------|----------|
-| **`slides.md`** | Primary source of truth. All slide content, styles, and metadata. | Always edit |
+| File / Folder | Role | Priority |
+|---|---|---|
+| **`slides.md`** | Staging area. `npm run dev` reads this file. | Always edit |
+| **`presentations/`** | Master archive. Each deck lives here as `<topic>.md`. | Source of truth for decks |
 | **`SKILL.md`** | **START HERE.** Operational playbook — design intelligence, QA protocol, icon safety, workflow steps. | Read before any task |
+| **`templates/`** | Starter boilerplate files for each archetype (`school`, `business`, `workshop`). | Copy to start a new deck |
 | **`PRINCIPLES.md`** | Strategic methodology — audience analysis, context discovery, narrative engineering. | Read before any new deck |
-| **`STYLE_GUIDE.md`** | Visual standards — typography, spacing, default palette, layout rules. | Read before styling |
-| **`public/`** | Static assets. Always reference as `/filename.png` (absolute path from root). | |
-| **`extract_pptx.py`** | Extracts text from legacy `.pptx` files. Also read slide XML in `temp_pptx/` for color/shape data. | For PPTX migrations |
+| **`STYLES.md`** | Visual catalog & decision matrix for selecting the correct archetype. | Read during Step 4 |
+| **`STYLE_GUIDE.md`** | Foundational visual standards — typography, spacing, palette philosophy. | Reference during styling |
+| **`styles/`** | **The CSS Engine.** HSL tokens, mesh gradients, glassmorphism, animations per archetype. | Never hardcode colours |
+| **`style.css`** | Global entry point. Imports all archetype CSS and clears Slidev theme defaults. | Do not delete |
+| **`components/`** | Vue components: `SlideCard`, `CategoryPill`, `LiveChart`. | Use in all decks |
+| **`layouts/`** | Custom Vue layouts: `default`, `cards`, `split`. | Set via frontmatter |
+| **`uno.config.ts`** | UnoCSS configuration with HSL token shortcuts. | Reference for utility classes |
+| **`public/`** | Static assets. Always reference as `/filename.webp`. | |
+| **`scripts/`** | Asset pipeline (`optimize-assets.js` for PNG→WebP conversion). | Run `npm run optimize` |
+| **`extract_pptx.py`** | Extracts text from legacy `.pptx` files. | For PPTX migrations |
 
 ---
 
@@ -34,34 +43,38 @@ Answer these three questions explicitly:
 ### Step 3: State Assumptions
 Present your audit to the user. Get confirmation before writing slides.
 
-### Step 4: Design Mapping
-From `SKILL.md`'s Audience → Design table, select:
-- Color palette (topic-specific, NOT generic blue)
-- Layout strategy (rounded cards vs. data-dense vs. calm)
-- Energy level (max energy → moderate → premium quiet)
+### Step 4: Design Mapping & Template Loading
+1. Consult **`STYLES.md`** to select the archetype that matches your Step 2 audit.
+2. **Load Template**: Read the corresponding file from `templates/` (e.g., `templates/school.md`) to use as your structural foundation.
+3. **Initialize Master**: Create `presentations/<topic>.md` with the template content.
+4. **Stage Dev**: Copy that content into `slides.md`.
+
+*Note: Always ensure the `class: style-<archetype>` frontmatter is present on every slide.*
 
 ### Step 5: Build + QA
-Write the slides. Then run the **QA Protocol** from `SKILL.md` before declaring done.
+Write the slides using the component-driven system. Then run the **QA Protocol** from `SKILL.md` before declaring done.
 
 ---
 
-## 🎨 Core Design Principles
+## 🎨 Core Design & Color System
 
-1. **Audience-First Contextuality**: Design is NOT a fixed mandate. Subject and audience dictate everything.
-2. **Geometric Life**: Every slide needs non-text visual elements — background circles, icons, images, or decorative shapes. Text-only slides are unacceptable.
-3. **Iconography as Language**: Use the **Carbon** icon set. Icons must provide instant visual shorthand, never decoration. **Always verify icon names** using the Icon Safety Protocol in `SKILL.md`.
-4. **Subject Harmony**: Colors must feel designed for THIS topic specifically. If swapping the palette into a different topic still "works," the choices weren't specific enough.
-5. **Dynamic Color Shifting**: Each module can have its own background gradient/color to signal a phase change and reset audience attention.
+1. **HSL Token Architecture**: All colors are stored as raw HSL channel values in CSS variables. Use `hsl(var(--token) / opacity)` — never hardcode hex values.
+2. **Mesh Gradients**: Each archetype has atmospheric `radial-gradient()` blobs layered behind content. These are animated with CSS keyframes.
+3. **Glassmorphism**: Cards use `backdrop-filter: blur()` with translucent backgrounds and inset highlights.
+4. **Decorative Elements**: Dot grids, geometric corner accents, floating particles, and tape-strip accents are rendered via `::before`/`::after` pseudo-elements.
+5. **Multi-layered Shadows**: Cards use 3-tier shadow stacks for realistic depth grounding.
+6. **Iconography**: Carbon icon set (`<carbon:icon-name />`). Always verify names exist — see SKILL.md Icon Safety Protocol.
 
 ---
 
 ## 🚀 Development Workflow
 
-- **Preview**: `npm run dev` → `http://localhost:3030`
+- **Preview**: `npm run dev` → `http://localhost:3030` (run from `slidev/` directory)
+- **Optimize Assets**: `npm run optimize` (converts PNG→WebP, ~75% size reduction)
+- **Switch Decks**: `Copy-Item presentations/<topic>.md slides.md`
 - **Transitions**: `fade` or `slide-left` for premium feel
 - **Interactivity**: `v-click` for sequential storytelling — never dump all content at once
-- **Layouts**: Rotate through `fact`, `center`, `two-cols`, `image-right`, `end` — never repeat the same layout consecutively
-- **Geometric Depth**: Use edge-bleed CSS circles on `.slidev-layout::before/::after` to break the rectangular frame
+- **Dark Mode**: Press `d` in the browser to toggle
 
 ---
 
@@ -76,6 +89,7 @@ Write the slides. Then run the **QA Protocol** from `SKILL.md` before declaring 
 
 ## 🛠️ Environment (Windows/PowerShell)
 
+- Run `npm run dev` from the `slidev/` subdirectory, **not** from `my-slides/`
 - Use semicolons (`;`) not `&&` to chain PowerShell commands
 - Use `Get-ChildItem -Recurse` instead of `dir /s`
 - UTF-8 for Python scripts: `sys.stdout.reconfigure(encoding='utf-8')`

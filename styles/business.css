@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+/* ================================================================
+   BUSINESS STYLE: Corporate Gradient + Glassmorphism + Decoratives
+   ================================================================ */
+
+/* === SUBTLE GEOMETRIC FLOAT === */
+@keyframes business-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33%      { transform: translate(5px, -8px) rotate(1deg); }
+  66%      { transform: translate(-3px, 4px) rotate(-0.5deg); }
+}
+
+@keyframes corner-accent-pulse {
+  0%, 100% { opacity: 0.12; }
+  50%      { opacity: 0.22; }
+}
+
+.slidev-layout.style-business {
+  --bg-primary: 210 40% 98%;
+  --bg-card: 0 0% 100%;
+  --text-main: 222 47% 11%;
+  --border-main: 214 32% 91%;
+  --accent-primary: 25 95% 53%;
+  --accent-secondary: 217 33% 17%;
+  --accent-tertiary: 226 71% 40%;
+  
+  font-family: 'Inter', sans-serif !important;
+  color: hsl(var(--text-main)) !important;
+  padding: 3.5rem !important;
+  position: relative;
+  overflow: hidden !important;
+
+  /* Corporate Mesh Gradient — Light Mode */
+  background:
+    radial-gradient(ellipse 90% 60% at 0%   0%,   hsl(25  95% 53% / 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 65% at 100% 100%,  hsl(226 71% 60% / 0.16) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50%  110%,  hsl(25  95% 53% / 0.08) 0%, transparent 50%),
+    hsl(var(--bg-primary)) !important;
+}
+
+/* === GEOMETRIC LINE ACCENTS (::before) === */
+.slidev-layout.style-business::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 280px;
+  z-index: 0;
+  border-right: 3px solid hsl(var(--accent-primary) / 0.15);
+  border-top: 3px solid hsl(var(--accent-primary) / 0.15);
+  border-radius: 0 0 0 60%;
+  animation: corner-accent-pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* === SUBTLE DOT GRID (::after) === */
+.slidev-layout.style-business::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.5;
+  background-image: radial-gradient(circle, hsl(var(--text-main) / 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom right, transparent 20%, black 50%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom right, transparent 20%, black 50%, transparent 80%);
+}
+
+html.dark .slidev-layout.style-business {
+  --bg-primary: 222 47% 11%;
+  --bg-card: 217 33% 17%;
+  --text-main: 210 40% 98%;
+  --border-main: 215 25% 27%;
+  --accent-primary: 25 95% 53%;
+  --accent-secondary: 217 91% 60%;
+  --accent-tertiary: 213 97% 68%;
+
+  /* Corporate Mesh Gradient — Dark Mode */
+  background:
+    radial-gradient(ellipse 80% 55% at 5%   5%,   hsl(217 91% 60% / 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 60% at 95%  90%,   hsl(25  95% 53% / 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 50%  -10%,  hsl(217 33% 17% / 0.80) 0%, transparent 70%),
+    hsl(var(--bg-primary)) !important;
+}
+
+/* Dark mode corner accent — use blue instead of orange */
+html.dark .slidev-layout.style-business::before {
+  border-right-color: hsl(var(--accent-secondary) / 0.18);
+  border-top-color: hsl(var(--accent-secondary) / 0.18);
+}
+
+/* === GLASSMORPHISM CARDS === */
+.style-business .card {
+  position: relative;
+  background: hsl(var(--bg-card) / 0.68) !important;
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid hsl(var(--border-main) / 0.55);
+  border-radius: 14px;
+  padding: 1.5rem;
+  /* Multi-layered corporate shadow */
+  box-shadow:
+    0 1px 3px hsl(var(--text-main) / 0.06),
+    0 4px 12px hsl(var(--text-main) / 0.08),
+    0 12px 30px -8px hsl(var(--text-main) / 0.10),
+    inset 0 1px 0 hsl(0 0% 100% / 0.25),
+    inset 0 -1px 0 hsl(0 0% 0% / 0.04);
+  /* Accent top border as gradient */
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, hsl(var(--accent-primary)), hsl(var(--accent-secondary))) 1;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.2s ease;
+  z-index: 1;
+}
+
+/* === FLOATING ACCENT DOT on cards === */
+.style-business .card::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: hsl(var(--accent-primary) / 0.5);
+  top: -4px;
+  right: 16px;
+  transform: rotate(45deg);
+  animation: business-drift 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.style-business .card:hover {
+  transform: translateY(-2px);
+  background: hsl(var(--bg-card) / 0.82) !important;
+  box-shadow:
+    0 2px 6px hsl(var(--text-main) / 0.08),
+    0 8px 20px hsl(var(--text-main) / 0.10),
+    0 20px 45px -10px hsl(var(--text-main) / 0.14),
+    inset 0 1px 0 hsl(0 0% 100% / 0.30),
+    inset 0 -1px 0 hsl(0 0% 0% / 0.05);
+}
+
+/* === FROSTED PILL === */
+.style-business .pill {
+  display: inline-block !important;
+  width: auto !important;
+  background: hsl(var(--accent-secondary) / 0.92) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 5px 14px;
+  border-radius: 6px;
+  border: 1px solid hsl(var(--accent-secondary) / 0.35);
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.style-business h1, .style-business h2, .style-business .title {
+  color: hsl(var(--text-main)) !important;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  border-left: 8px solid hsl(var(--accent-primary));
+  padding-left: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.style-business .stat {
+  font-size: 3rem;
+  font-weight: 900;
+  color: hsl(var(--accent-tertiary)) !important;
+}

@@ -1,5 +1,5 @@
 # Strategic Presentation Principles 🧠
-*A Framework for Context-Aware Design & Storytelling*
+*A Framework for Context-Aware Design & Storytelling — v2.0*
 
 This document defines the methodology for transforming a raw topic into a premium, audience-resonant Slidev presentation. Use this to decode the "Why" and "How" before writing a single line of Markdown.
 
@@ -12,9 +12,9 @@ Before designing, you must define the **Triad of Context**:
 - **The Knowledge Gap**: What do they already know vs. what do they *need* to know?
 - **The Motivation**: Are they here to be inspired, to learn a skill, or to make a decision?
 - **The Vibe**: 
-  - *School Students*: High energy, tactile metaphors, gaming/superpower themes.
-  - *Corporate/Gov*: High density, data-driven, ROI-focused, professional stability.
-  - *Technical/Devs*: Code-first, logic-driven, "under the hood" transparency.
+  - *School Students*: High energy, tactile metaphors, gaming/superpower themes → **`style-school`**
+  - *Corporate/Gov*: High density, data-driven, ROI-focused → **`style-business`**
+  - *Field Operators*: Practical, instructional, hands-on → **`style-workshop`**
 
 ### B. The Subject (What is the core?)
 - **Complexity**: Is it a "Simple Concept" (Poultry) or a "Complex System" (AI)?
@@ -31,43 +31,54 @@ Before designing, you must define the **Triad of Context**:
 ## 2. Phase 2: Decoding User Input
 When a user provides a brief, translate it into a **Strategy Matrix**:
 
-| User Request | Design Implication | Narrative Shift |
-| :--- | :--- | :--- |
-| "Make it simple" | Increase whitespace, reduce bullet points. | Use 1:1 metaphors (e.g., "AI is a paintbrush"). |
-| "Make it premium" | Use Serif fonts, deep dark palettes, fade transitions. | Focus on "The Vision" and "Global Impact." |
-| "Make it engaging" | Add `v-click` reveals and `ACTIVITY` slides. | Shift from "Lecturing" to "Asking/Prompting." |
-| "Make it local" | Use Indocentric terms and familiar imagery. | Ground examples in local success stories. |
+| User Request | Design Implication | Archetype Hint |
+|---|---|---|
+| "Make it simple" | Increase whitespace, reduce bullet points. | `style-school` with fewer cards |
+| "Make it premium" | Cinematic imagery, glassmorphism, dark mode. | `style-school` or `style-business` (dark) |
+| "Make it engaging" | Add `v-click` reveals and `ACTIVITY` slides. | Any archetype + `v-click` on every card |
+| "Make it local" | Use Indocentric terms and familiar imagery. | Any archetype + Hinglish + rural examples |
+| "Make it data-heavy" | Use `LiveChart`, stat cards, split layouts. | `style-business` with stat-focused slides |
+| "Make it practical" | Step-by-step cards, activity boxes. | `style-workshop` |
 
 ---
 
 ## 3. Phase 3: The Design Mapping
-Map the discovery insights to Slidev configuration:
+Map the discovery insights to the engine's configuration:
 
-| Insight | Palette Choice | Layout Choice |
-| :--- | :--- | :--- |
-| **Trust/Authority** | Navy, Grey, Dark Forest | `quote`, `fact`, `center` |
-| **Energy/Innovation** | Orange, Electric Blue, Neon | `two-cols`, `v-motion`, `image-right` |
-| **Calm/Education** | Pastel Greens, Soft Creams | `center`, balanced `image-left` |
+| Insight | Archetype | Layout Strategy |
+|---|---|---|
+| **Trust/Authority** | `style-business` | `split` + `LiveChart`, stat cards |
+| **Energy/Innovation** | `style-school` | `cards` with staggered v-click, `split` with images |
+| **Calm/Education** | `style-school` (light) | `default`, balanced layouts |
+| **Hands-On Training** | `style-workshop` | `cards` with activity boxes, dashed borders |
+
+### Archetype → Slide Template Mapping
+1. Select archetype from `STYLES.md`
+2. Copy the matching template from `templates/<archetype>.md`
+3. Create your master file in `presentations/<topic>.md`
+4. Stage it: `Copy-Item presentations/<topic>.md slides.md`
 
 ---
 
 ## 4. Phase 4: Narrative Engineering (The "Power Flow")
 Apply the structure based on the audience's attention span:
 
-1.  **The Hook (0-5 mins)**: Unlock curiosity. If it's a student, use a "Superpower." If it's a CEO, use a "Trillion Dollar Opportunity."
-2.  **The Modules (15-40 mins)**: Chunk the information. Humans remember 3-4 things max. Use the `module-label` to signpost progress.
-3.  **The Bridge (Every 10 mins)**: Break the "Fourth Wall." Use a `VOTE TIME` or `LIVE DEMO` to bring the audience back into the room.
-4.  **The Finale (Final 5 mins)**: Transition from "Thinking" to "Doing." End with a **Mission** or a **Question**.
+1. **The Hook (0-5 mins)**: Unlock curiosity. Use a cinematic cover slide (`split` layout with a generated cover image).
+2. **The Modules (15-40 mins)**: Chunk the information into 3 labelled blocks. Use the `CategoryPill` component to signpost progress. Each module uses `cards` or `split` layouts.
+3. **The Bridge (Every 10 mins)**: Break the "Fourth Wall." Use a `VOTE TIME` or `LIVE DEMO` to bring the audience back into the room.
+4. **The Finale (Final 5 mins)**: Transition from "Thinking" to "Doing." Use `default` layout with centered spring-animated text and stat dividers.
 
 ---
 
-## 5. The Implementation Checklist
-- [ ] **Define the Triad**: Audience, Subject, Setting.
-- [ ] **Choose the DNA**: Select 2-3 colors and a font pairing that fits the vibe.
-- [ ] **Map the Modules**: Group information into 3 distinct blocks.
-- [ ] **Audit the Minimalist**: Remove 30% of the text from each slide.
-- [ ] **Add the Interaction**: Ensure there is at least one `v-click` or `Activity` every 3 slides.
+## 5. The Visual Quality Checklist
+- [ ] **No Hardcoded Colors**: Every `color`, `background`, `border`, and `box-shadow` uses `hsl(var(--token) / opacity)`.
+- [ ] **Archetype Applied**: Every slide has `class: style-<archetype>` in frontmatter.
+- [ ] **No Text-Only Slides**: Every slide has at least one icon, image, card, or decorative element.
+- [ ] **Density Safe**: No more than 3 cards per row, 6 cards max per slide. Grid gap ≤ `0.8rem` for dense grids.
+- [ ] **v-click Active**: Content is revealed sequentially, not dumped at once.
+- [ ] **Images Optimized**: All images are `.webp` format in `public/`.
+- [ ] **Dark Mode Tested**: Press `d` to verify both modes look premium.
 
 ---
 
-*“Design is not just what it looks like and feels like. Design is how it works.”* — Steve Jobs
+*"Design is not just what it looks like and feels like. Design is how it works."* — Steve Jobs

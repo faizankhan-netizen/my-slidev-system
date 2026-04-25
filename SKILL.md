@@ -43,22 +43,118 @@ We use a **Hybrid Layout** because it combines the precision of absolute graphic
 2. **The Global Background Reset**
    Always style the `body` and `#app` in your global `<style>` block to match the slide background. This ensures that the browser area outside the slide canvas (the "viewport gap") is never white, creating a seamless full-bleed experience.
 
-3. **The 2-Layer Content Structure**
-   Now that the background and safe-zone padding are on the layout, slides use a simplified structure:
-   ```html
-   <div class="content-wrapper" style="position:relative; z-index:10; width:100%;">
-      <!-- Text and interactive elements go here -->
-   </div>
+3. **Custom Vue Layouts & Component-Driven Structure**
+   Instead of writing raw HTML wrappers, use frontmatter to define the slide layout, and our custom Vue components for the content.
+   
+   *Available Layouts (set via `layout: name` in frontmatter):*
+   - `default`: Automatically wraps content in the safe-zone wrapper.
+   - `cards`: Requires `pill` and `title` in frontmatter. Automatically creates a balanced flex-grid for your cards.
+   - `split`: Requires `pill`, `title`, and `subtitle`. Perfect for left-text and right-media (`::right::`) splits.
+
+   *Theming & Dark Mode (CSS Variables):*
+   - The entire engine is powered by CSS Variables (`--bg-primary`, `--text-main`, etc.).
+   - Slidev's built-in Dark Mode toggle automatically switches these variables.
+   - **Business** flips to a sleek Slate/Navy dark mode.
+   - **School** remains a dark Neon cosmos.
+   - **Workshop** flips from a warm "Paper" look to a stunning "Blueprint" aesthetic.
+
+   *Example (The Cards Layout):*
+   ```markdown
+   ---
+   layout: cards
+   class: style-school
+   pill: THE MISSION
+   title: Main Title
+   ---
+   <SlideCard v-click title="Point 1" icon="🚀" borderTop="#22D3EE">
+      Explanation text here.
+   </SlideCard>
    ```
+   *Available Components:*
+   - `<CategoryPill>`: Wraps text in the styled pill format.
+   - `<SlideCard>`: Accepts `title`, `icon`, `stat`, `titleColor`, and `borderTop` props.
+   - `<LiveChart>`: Accepts `option` (JSON object of ECharts config), `width`, and `height`. Use for animated, dynamic data visualizations (especially in Business/Technical styles).
 
-4. **Density-Aware Scaling (The Bleed Prevention Rule)**
+4. **Premium Typography Engine**
+   We utilize imported Google Fonts to give each archetype a distinct, high-end feel. Do not override these unless instructed:
+   - **Business:** `Inter` (Sharp, credible, corporate)
+   - **School:** `Outfit` (Geometric, vibrant, accessible)
+   - **Workshop:** `Space Grotesk` (Pragmatic, technical, instructional)
+
+5. **HSL Color Engine (The Alpha Superpower)**
+   All CSS variables store raw HSL *channel values* — NOT full hex codes or hsl() wrappers.
+   This means you can dynamically apply any opacity to any themed color anywhere:
+   ```css
+   /* ✅ CORRECT — dynamic opacity composable */
+   background: hsl(var(--bg-card) / 0.05);
+   box-shadow: 0 4px 20px hsl(var(--text-main) / 0.12);
+
+   /* ❌ WRONG — breaks the opacity system */
+   background: var(--bg-card);
+   ```
+   UnoCSS shortcuts for common patterns (use these in slide content):
+   - `slide-card-shadow` — Themed drop shadow auto-adapts to dark/light mode
+   - `neon-glow`         — Coloured glow matching `--accent-secondary`
+   - `subtle-border`     — 30% opacity border matching `--border-main`
+
+6. **Mesh Gradients & Glassmorphism (Phase 3)**
+   Each archetype's background is now a layered CSS mesh gradient using `radial-gradient()`. Cards and pills use **glassmorphism**: `backdrop-filter: blur()` with semi-transparent `hsl()` backgrounds and inset highlights.
+   
+   *Archetype Visual Signatures:*
+   - **Business:** Faint orange + blue radial blobs over clean slate. Glass cards with subtle `inset 0 1px 0` highlight and hover lift.
+   - **School:** Four-colour neon cosmos (Cyan + Pink + Gold + Purple). Cards are near-invisible frosted glass. Headings have a `text-shadow` neon glow.
+   - **Workshop (Light):** Warm amber gradient blobs over cream paper. Sticky-note cards have a slight rotation and authentic dashed borders.
+   - **Workshop (Dark):** Blueprint mode — cool blue mesh gradient. Same card structure recoloured to engineering blueprint aesthetic.
+   
+   **Critical Rule:** Do NOT add `background` inline styles to slides using these archetypes. The mesh gradient lives in the CSS and must not be overridden.
+
+7. **Decorative Design Elements (Phase 2)**
+   Each archetype now has animated background textures and micro-decorations powered by CSS `::before`/`::after` pseudo-elements. These are pure CSS — no JavaScript or extra DOM needed.
+   
+   *Shared Patterns:*
+   - **Animated Blobs:** The mesh gradient blobs slowly "breathe" using a 15s CSS keyframe (`cosmos-breathe`). This prevents the background from feeling static.
+   - **Background Textures:** Each archetype has a masked texture (dot grid or graph paper) that fades towards the edges. This adds depth without competing with content.
+   - **Card Micro-accents:** Floating particles, diamond shapes, or tape strips appear near cards using `::before`/`::after` on `.card`.
+   
+   *Archetype-Specific Flourishes:*
+   - **School:** Cyan/pink neon particles float near cards. The pill has a `neon-pulse` animation.
+   - **Business:** A geometric corner accent (curved orange lines) pulses in the top-right. Small diamond shapes float on cards.
+   - **Workshop:** A drafting ruler with tick marks lines the left edge. Cards have "tape strip" accents that gently sway.
+   
+   **Critical Rule:** All decorative pseudo-elements use `z-index: 0` and `pointer-events: none`. All content uses `z-index: 1`. Never change these values.
+
+8. **Density-Aware Scaling (The Bleed Prevention Rule)**
    - **Titles:** Cap at `3rem` for dense slides (3+ cards/items).
-   - **Gaps:** Use `gap: 15px` for horizontal card layouts.
+   - **Padding:** Rely on the `default` layout padding. Do not add random padding hacks.
    - **Safe Zone:** All text must stay within the `3.5rem` padding buffer. If content approaches the bottom edge, downscale fonts or simplify descriptions immediately.
+   - **Dense Grids (3×2):** Use `gap: 0.8rem` and shorten card descriptions to single lines.
 
-5. **Graphic Positioning**
+9. **Graphic Positioning**
    - **Absolute Accents:** Use `top`, `left`, etc. for decorative dots. Note that they position relative to the *padded* layout, so `top:0` starts at the padding edge.
    - **Bleed Geometry:** Use `::before/::after` pseudo-elements for large edge-bleed shapes to keep the DOM clean.
+
+### 🎨 Style Presets & Theming
+We have pre-designed CSS contexts in the `styles/` folder. Apply them to match your audience:
+
+1. **Importing Styles**: Add the import at the top of your global `<style>` block:
+   ```css
+   @import './styles/school.css';
+   @import './styles/business.css';
+   @import './styles/workshop.css';
+   ```
+
+2. **Applying to Slides**: Use the corresponding class in your frontmatter:
+   - **`style-school`**: Vibrant, rounded, neon accents (For students).
+   - **`style-business`**: Structured, Slate/Navy, trust-focused (For corporate).
+   - **`style-workshop`**: Warm paper, dashed lines, action-oriented (For training).
+
+   Example:
+   ```markdown
+   ---
+   layout: default
+   class: style-school
+   ---
+   ```
 
 ### 🚨 Critical Parser Rules (Do Not Break)
 1. **Single Root Element:** Every slide must have exactly ONE root `<div>`.
@@ -68,7 +164,8 @@ We use a **Hybrid Layout** because it combines the precision of absolute graphic
 5. **Markdown-in-HTML Limitation:** Markdown syntax (like `**bold**`) does NOT render inside HTML tags. Always use HTML tags (`<b>`, `<strong>`) or `<span style="...">` for text highlighting within layout blocks.
 6. **Icon Sibling Safety:** Never place a `<carbon:icon />` as a direct sibling of a `<div>` inside a flex container. Wrap icons in a `<span>` to prevent template parsing crashes.
 7. **Safe Zone Discipline:** To respect the `3.5rem` safety buffer, cap main titles at `2.8rem` - `3.2rem` and use `width: 100%` on containers to ensure they wrap within the padding instead of overflowing.
-8. **No Tailwind Arbitrary Values:** Avoid `w-[350px]` in Vue templates; use `style="width: 350px"` to prevent parser confusion.
+8. **No Trailing Separator:** Never leave a `---` separator at the very end of the file. Slidev interprets this as the start of a new slide, resulting in an unintended blank slide at the end of your presentation.
+9. **No Tailwind Arbitrary Values:** Avoid `w-[350px]` in Vue templates; use `style="width: 350px"` to prevent parser confusion.
 
 
 
@@ -82,6 +179,7 @@ We use a **Hybrid Layout** because it combines the precision of absolute graphic
 | Read a `.pptx` for style reference | Run `python extract_pptx.py <file.pptx>` |
 | Preview slides | `npm run dev` → open `http://localhost:3030` |
 | Verify an icon exists | `python -c "import json; data=json.load(open('node_modules/@iconify-json/carbon/icons.json')); print([k for k in data['icons'].keys() if 'keyword' in k])"` |
+| Launch Remote Control | `npm run remote` → Press `Ctrl+R` in deck |
 | Debug a broken slide | Check `slides.md__slidev_N.md` line numbers in Vite error → trace back to `slides.md` |
 
 ---
@@ -123,54 +221,50 @@ Every slide must have a **visual element** — background shape, icon, image, or
 | **Corporate/Government** | Deep: Navy + Gold + Off-white | `quote`, `fact`, data tables | Premium, no gimmicks |
 | **Developers/Technical** | Dark: Charcoal + Accent + Code blocks | `two-cols` with code, terminal aesthetic | Clean, precise |
 | **Awareness/Social** | Calm: Sage + Cream + Warm Accent | `center`, flowing text, imagery | Emotional, spacious |
+| **Luxury** | Dark: Midnight Obsidian + Gold | `split` with cinematic images | Sophisticated, visionary |
 
 ---
 
-## Color Palette Library
+## 📡 Mission Control: Remote Navigation
 
-Choose colors specific to the topic — never default to generic blue.
+The engine features a built-in "Mission Control" portal for mobile remote control.
 
-| Theme | Background | Primary | Accent | Use For |
-|-------|-----------|---------|--------|---------|
-| **AI Superpower** | `#1A1F5E` deep navy | `#FF6B35` orange | `#06D6A0` teal | High-energy student seminars |
-| **Poultry / Agri** | `#1E293B` slate | `#F97316` orange | `#22C55E` green | Agricultural / rural topics |
-| **Health / Medical** | `#0D9488` teal | `#FB7185` coral | `#F8FAFC` off-white | Health awareness for students |
-| **Corporate** | `#1E2761` navy | `#CADCFC` ice blue | `#FFFFFF` white | Executive presentations |
-| **Nature / Environment** | `#2C5F2D` forest | `#97BC62` moss | `#F5F5F5` cream | Ecology, sustainability |
-| **Finance / Business** | `#36454F` charcoal | `#F2F2F2` off-white | `#FFD700` gold | Finance, strategy decks |
+### How to use:
+1. **Launch**: Run `npm run remote` in your terminal. This exposes the presentation to your local network.
+2. **Access Portal**: Press `Ctrl+R` on your desktop browser while the presentation is open.
+3. **Connect**: Scan the generated QR code with your mobile device.
+4. **Command**: Once open on mobile, a **Tactile Remote Interface** (Luxury Style) will appear with large Next/Back buttons for seamless navigation.
 
-**Rule of Dominance**: One color carries 60-70% visual weight. Max 3 colors per deck.
+**Safety Note**: Both devices must be connected to the same local WiFi network for the portal to bridge.
 
 ---
 
-## "Geometric Life" — The Core Visual System
+## Color System (Archetype-Driven)
 
-The original AI Superpower deck's secret weapon: **circles and blobs that bleed off the slide edges**, creating depth and breaking the "rectangular prison."
+> **Do NOT pick colors manually.** Select an archetype, and the CSS engine handles all colors via HSL tokens.
 
-Replicate this in Slidev using CSS on `.slidev-layout`:
+| Archetype | Accent Primary | Accent Secondary | Accent Tertiary | Best For |
+|---|---|---|---|---|
+| **`style-school`** | Cyan (`188 86% 53%`) | Pink (`330 81% 60%`) | Gold (`48 96% 53%`) | Student seminars, history, science, tech |
+| **`style-business`** | Orange (`25 95% 53%`) | Navy (`217 33% 17%`) | Blue (`226 71% 40%`) | Corporate, ROI, procurement, strategy |
+| **`style-workshop`** | Amber (`32 94% 44%`) | Yellow (`46 97% 65%`) | Bronze (`38 92% 50%`) | Training, field guides, how-to |
 
-```css
-/* Edge-bleed geometric circles */
-.slidev-layout::before {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: rgba(255, 107, 53, 0.15); /* Use topic accent color */
-  border-radius: 50%;
-  top: -200px;
-  right: -200px;
-  z-index: 0;
-  animation: float 12s infinite alternate ease-in-out;
-}
+**If you need a topic-specific colour not covered above**, add a new archetype CSS file in `styles/` following the established HSL variable pattern.
 
-@keyframes float {
-  from { transform: translate(0, 0); }
-  to { transform: translate(40px, 40px); }
-}
-```
+---
 
-**Small "Confetti" Dots**: Use inline `<div>` elements with varying sizes and topic colors to scatter across the slide background.
+## "Geometric Life" — The Visual Layer System
+
+The engine's visual depth comes from **4 automated CSS layers**, not from manual inline styles. You do NOT need to write any `::before`/`::after` CSS in your markdown.
+
+| Layer | What It Does | Source |
+|---|---|---|
+| **1. Mesh Gradient** | Atmospheric radial-gradient blobs | Archetype CSS (`background` on `.slidev-layout`) |
+| **2. Background Texture** | Dot grid / graph paper | Archetype CSS (`::after` on `.slidev-layout`) |
+| **3. Decorative Accents** | Particles, corner lines, tape strips | Archetype CSS (`::before` on `.slidev-layout` / `.card`) |
+| **4. Content** | Cards, pills, titles, charts | Your markdown + Vue components |
+
+**All layers are automatic.** Simply set `class: style-school` in frontmatter and the entire visual system activates.
 
 ---
 
@@ -263,14 +357,40 @@ Mentally scroll through your slides and check:
 
 ```
 slidev/
-├── slides.md          # Source of truth — ALL content lives here
-├── AGENTS.md          # Operational rules for AI agents
-├── STYLE_GUIDE.md     # Default visual standards and color tokens
-├── PRINCIPLES.md      # Strategic methodology: audience → design mapping
-├── SKILL.md           # This file — operational intelligence for presentations
-├── extract_pptx.py    # Extract text from legacy .pptx files
-└── public/            # Static assets (images, logos)
-    └── *.png          # Always referenced as /filename.png in slides.md
+├── slides.md              # Staging area — npm run dev reads this
+├── presentations/         # Master archive for all decks
+│   ├── mughal_empire.md
+│   ├── history_of_islam.md
+│   └── ...
+├── style.css              # Global entry point — imports all archetype CSS
+├── styles/                # The CSS Engine (HSL tokens, mesh gradients, glassmorphism)
+│   ├── school.css         # Neon Cosmos archetype
+│   ├── business.css       # Corporate Executive archetype
+│   └── workshop.css       # Warm Paper / Blueprint archetype
+├── components/            # Vue components
+│   ├── SlideCard.vue      # Primary card with glassmorphism
+│   ├── CategoryPill.vue   # Inline label with archetype styling
+│   └── LiveChart.vue      # ECharts wrapper for animated data viz
+├── layouts/               # Custom Slidev layouts
+│   ├── default.vue        # Base layout with safe-zone padding
+│   ├── cards.vue          # Auto-grid card layout with pill/title
+│   └── split.vue          # Left text + right media layout
+├── templates/             # Starter boilerplate for each archetype
+│   ├── school.md
+│   ├── business.md
+│   └── workshop.md
+├── scripts/               # Automation
+│   └── optimize-assets.js # PNG→WebP asset pipeline
+├── uno.config.ts          # UnoCSS with HSL token shortcuts
+├── AGENTS.md              # Agent operational rules
+├── SKILL.md               # This file — operational intelligence
+├── STYLE_GUIDE.md         # Visual standards & color architecture
+├── STYLES.md              # Archetype selection matrix
+├── PRINCIPLES.md          # Strategic methodology
+├── public/                # Static assets (images, logos)
+│   └── *.webp             # Always referenced as /filename.webp
+├── package.json           # Dependencies (Slidev, ECharts, Sharp, Vue)
+└── extract_pptx.py        # Extract text from legacy .pptx files
 ```
 
 ---
@@ -280,18 +400,31 @@ slidev/
 ### Create a new presentation from a topic
 
 1. Run the **Pre-Draft Protocol** — state audience, topic, setting
-2. Pick a **Color Palette** from the library above that fits the topic
-3. Design the **Power Flow** — 3 module names specific to this topic
-4. Write `slides.md` with a `<style>` block at the top defining the palette
-5. Verify all icons before saving
-6. Check terminal for errors
+2. Select the **Archetype** from `STYLES.md` based on your audience audit
+3. Copy the matching **Template**: `Copy-Item templates/school.md presentations/<topic>.md`
+4. Design the **Power Flow** — 3 module names specific to this topic
+5. Generate **Cover Image** using the AI image tool
+6. Run `npm run optimize` to convert to WebP
+7. Write the slides in `presentations/<topic>.md` using Vue components
+8. Stage for preview: `Copy-Item presentations/<topic>.md slides.md`
+9. Verify all icons before saving
+10. Check terminal for errors, test dark mode (`d` key)
+
+### Switch between decks
+
+```powershell
+# Save current work
+Copy-Item slides.md presentations/current_topic.md
+# Load different deck
+Copy-Item presentations/new_topic.md slides.md
+```
 
 ### Migrate from a `.pptx` file
 
 1. Run `python extract_pptx.py <file.pptx>` to extract text
-2. Open `temp_pptx/ppt/slides/slide1.xml` to extract hex color codes and shape types
-3. Use those exact colors in the `<style>` block of the new `slides.md`
-4. Rebuild the content in Slidev with enhanced interactivity (`v-click`, `v-motion`)
+2. Open `temp_pptx/ppt/slides/slide1.xml` to extract content structure
+3. Select the closest archetype from `STYLES.md`
+4. Rebuild the content in Slidev with `v-click`, `v-motion`, and Vue components
 
 ### Debug a Vite error
 
@@ -299,3 +432,4 @@ slidev/
 2. Count to that slide in `slides.md` (slides separated by `---`)
 3. Check for: unclosed tags, invalid icon names, malformed frontmatter
 4. Do a **full file overwrite** (not a patch) to flush Vite's virtual file cache
+
