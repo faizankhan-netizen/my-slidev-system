@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p:notes xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"><p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr><p:sp><p:nvSpPr><p:cNvPr id="2" name="Slide Image Placeholder 1"/><p:cNvSpPr><a:spLocks noGrp="1" noRot="1" noChangeAspect="1"/></p:cNvSpPr><p:nvPr><p:ph type="sldImg"/></p:nvPr></p:nvSpPr><p:spPr/></p:sp><p:sp><p:nvSpPr><p:cNvPr id="3" name="Notes Placeholder 2"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="body" idx="1"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="en-US" dirty="0"/><a:t>EMOTION CLASSIFIER — ACTIVITY 2 (15 minutes)
+
+SETUP: Pre-print the phrase cards (one set per group). They can also be copied from this slide by reading aloud if printing isn&apos;t possible — have each group write the phrases on paper slips.
+
+INSTRUCTIONS:
+SAY: &quot;Each group has 12 phrase cards — real Hinglish phrases people actually say. Your job: sort them into 4 emotion buckets — Happy, Sad, Angry, or Neutral. No dictionaries. No discussion with other groups. Just your gut.&quot;
+Give 5 minutes for sorting.
+
+DEBRIEF (8 min — this is where the learning happens):
+Ask each group their answer for 3-4 disputed phrases. DISAGREEMENTS ARE GOLD.
+SAY: &quot;Why did Group 1 say Happy and Group 2 say Neutral for the same phrase? Who&apos;s right?&quot;
+Let them argue briefly. Then:
+SAY: &quot;Nobody is &apos;wrong.&apos; That&apos;s the point. Humans DISAGREE on the emotion behind language all the time. And when AI companies try to train AI on emotions, they use thousands of human votes — just like yours — and take the majority answer.&quot;
+
+CONNECT TO REAL AI:
+SAY: &quot;This exact task — reading emotion in text — is called Sentiment Analysis. AI does this 5 billion times a day. Every YouTube comment. Every tweet. Every product review. AI reads it, classifies the emotion, and acts on it.&quot;
+SAY: &quot;Swiggy uses it to see which restaurant complaints are angry vs. just feedback. IRCTC uses it to check if travellers are frustrated. RBI uses it to monitor whether people are worried about the economy.&quot;
+
+ICEBREAKER #3:
+SAY: &quot;Last question before our final break: If you had to explain what a &apos;dataset&apos; is to someone who has never heard of computers — what would you compare it to? 30 seconds.&quot;
+Best analogies: &quot;A library of examples&quot; / &quot;A cricket coaching guide&quot; / &quot;A recipe book with 1 million recipes&quot;
+Use the best answer as your closing metaphor.</a:t></a:r><a:endParaRPr lang="en-US" dirty="0"/></a:p></p:txBody></p:sp><p:sp><p:nvSpPr><p:cNvPr id="4" name="Slide Number Placeholder 3"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="sldNum" sz="quarter" idx="10"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:fld id="{F7021451-1387-4CA6-816F-3879F97B5CBC}" type="slidenum"><a:rPr lang="en-US"/><a:t>24</a:t></a:fld><a:endParaRPr lang="en-US"/></a:p></p:txBody></p:sp></p:spTree><p:extLst><p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}"><p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="1024086991"/></p:ext></p:extLst></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:notes>

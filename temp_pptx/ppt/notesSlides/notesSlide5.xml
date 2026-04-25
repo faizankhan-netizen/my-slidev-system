@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p:notes xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"><p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr><p:sp><p:nvSpPr><p:cNvPr id="2" name="Slide Image Placeholder 1"/><p:cNvSpPr><a:spLocks noGrp="1" noRot="1" noChangeAspect="1"/></p:cNvSpPr><p:nvPr><p:ph type="sldImg"/></p:nvPr></p:nvSpPr><p:spPr/></p:sp><p:sp><p:nvSpPr><p:cNvPr id="3" name="Notes Placeholder 2"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="body" idx="1"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="en-US" dirty="0"/><a:t>DEMO 2 — VOICE CLONE (4 minutes)
+
+PRE-SETUP: The voice clip MUST be saved as an MP3 locally on your laptop BEFORE class. Don&apos;t rely on generating it live (takes time and needs good internet). Ideal: record a 20-second clip of yourself saying something funny/relatable, then clone it at elevenlabs.io the night before.
+
+STEP 1: Play the original recording first. Tell them: &quot;This is a real recording.&quot;
+STEP 2: Play the AI clone. Ask: &quot;Is THIS real or AI? Vote — raise your hand for real.&quot; 
+STEP 3: Reveal — &quot;That was AI. It learned this voice from a 20-second sample.&quot;
+STEP 4: Deliver the line slowly and clearly: &quot;Your voice has a fingerprint. AI just learned it in 10 seconds.&quot;
+
+PAUSE. Let it land. Then ask:
+SAY: &quot;If AI can learn your voice... what else do you think it can learn?&quot;
+Take 2-3 shouted answers. Don&apos;t evaluate them — just nod and smile. They&apos;re already thinking like scientists.
+
+PRO TIP: If you use a teacher&apos;s or principal&apos;s voice (with permission), the reaction is electric.</a:t></a:r><a:endParaRPr lang="en-US" dirty="0"/></a:p></p:txBody></p:sp><p:sp><p:nvSpPr><p:cNvPr id="4" name="Slide Number Placeholder 3"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="sldNum" sz="quarter" idx="10"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:fld id="{F7021451-1387-4CA6-816F-3879F97B5CBC}" type="slidenum"><a:rPr lang="en-US"/><a:t>5</a:t></a:fld><a:endParaRPr lang="en-US"/></a:p></p:txBody></p:sp></p:spTree><p:extLst><p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}"><p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="1024086991"/></p:ext></p:extLst></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:notes>

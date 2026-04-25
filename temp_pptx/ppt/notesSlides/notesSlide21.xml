@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p:notes xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"><p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr><p:sp><p:nvSpPr><p:cNvPr id="2" name="Slide Image Placeholder 1"/><p:cNvSpPr><a:spLocks noGrp="1" noRot="1" noChangeAspect="1"/></p:cNvSpPr><p:nvPr><p:ph type="sldImg"/></p:nvPr></p:nvSpPr><p:spPr/></p:sp><p:sp><p:nvSpPr><p:cNvPr id="3" name="Notes Placeholder 2"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="body" idx="1"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="en-US" dirty="0"/><a:t>SUPERPOWER SPECTRUM VOTE (12 minutes — the most interactive slide in Module 2)
+
+SETUP: Explain the spectrum clearly before starting:
+SAY: &quot;On my left is &apos;AI will REPLACE this job.&apos; On my right is &apos;AI will HELP with this job.&apos; In the middle is &apos;Not sure.&apos; For each job I read out — stand up if you think AI replaces it, stay seated if AI helps it. If you&apos;re unsure, raise one hand.&quot;
+
+GO THROUGH EACH JOB. After each vote, reveal the thinking:
+- DOCTOR: Usually split. SAY: &quot;AI can read scans and diagnose diseases. But can it hold a patient&apos;s hand? Feel their pain? The AI diagnoses. The doctor heals.&quot;
+- CRICKETER: Most say &quot;Help.&quot; SAY: &quot;AI already tracks ball speed, bounce prediction, player fatigue. But Virat Kohli&apos;s cover drive? That&apos;s still human.&quot;
+- TEACHER: Split. This is the juicy one. Let the debate run for 30 seconds.
+- DRIVER: Most say &quot;Replace.&quot; SAY: &quot;Actually... this is one job where AI is genuinely taking over. Self-driving trucks are already on some Indian highways.&quot;
+- POET: Most say &quot;Help.&quot; SAY: &quot;Is a poem written by AI... still a poem? This question has no right answer. But it&apos;s worth asking.&quot;
+
+FINAL LINE — deliver it like a mic drop:
+SAY (slowly): &quot;AI doesn&apos;t replace people.&quot; (pause)
+&quot;It replaces people who don&apos;t know how to use AI.&quot; (longer pause)
+&quot;That&apos;s why you&apos;re here today.&quot;
+
+This line always lands hard. Let the silence run for 3 seconds after you say it.</a:t></a:r><a:endParaRPr lang="en-US" dirty="0"/></a:p></p:txBody></p:sp><p:sp><p:nvSpPr><p:cNvPr id="4" name="Slide Number Placeholder 3"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="sldNum" sz="quarter" idx="10"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:fld id="{F7021451-1387-4CA6-816F-3879F97B5CBC}" type="slidenum"><a:rPr lang="en-US"/><a:t>21</a:t></a:fld><a:endParaRPr lang="en-US"/></a:p></p:txBody></p:sp></p:spTree><p:extLst><p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}"><p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="1024086991"/></p:ext></p:extLst></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:notes>

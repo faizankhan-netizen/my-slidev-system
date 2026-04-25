@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p:notes xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"><p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr><p:sp><p:nvSpPr><p:cNvPr id="2" name="Slide Image Placeholder 1"/><p:cNvSpPr><a:spLocks noGrp="1" noRot="1" noChangeAspect="1"/></p:cNvSpPr><p:nvPr><p:ph type="sldImg"/></p:nvPr></p:nvSpPr><p:spPr/></p:sp><p:sp><p:nvSpPr><p:cNvPr id="3" name="Notes Placeholder 2"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="body" idx="1"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="en-US" dirty="0"/><a:t>BOLLYWOOD AI (5 minutes)
+
+This is the highest-energy content slide because every student in the room has seen these films.
+
+OPENING HOOK — ASK (with full dramatic pause):
+SAY: &quot;How many of you have seen RRR?&quot;
+(Almost everyone will raise their hand)
+SAY: &quot;Remember the massive battle scene at the beginning — with thousands of horses, soldiers, water everywhere? How many horses do you think were real?&quot;
+
+Let them guess. Common answers: &quot;500&quot; / &quot;100&quot; / &quot;All of them&quot;
+
+REVEAL: &quot;Almost none. The AI and VFX team composited nearly every horse. Even the water in parts of those scenes.&quot;
+
+GO THROUGH EACH CARD:
+- RRR: &quot;National Award winner. AI-made.&quot;
+- Brahmastra: &quot;Every energy beam — pure AI rendering.&quot;
+- Shah Rukh: &quot;The young SRK in Jawan? AI de-aging. His actual face was digitally rewound by 25 years.&quot;
+- Bahubali: &quot;Mahishmati never existed. You visited a world that was built entirely inside a computer.&quot;
+
+CONNECT BACK:
+SAY: &quot;The same technology that created Mahishmati is the same technology we used 20 minutes ago to generate that picture from your 3 words. It&apos;s called a diffusion model. And now you know what it is.&quot;
+
+This is a genuine &apos;wow&apos; moment. Let it breathe.</a:t></a:r><a:endParaRPr lang="en-US" dirty="0"/></a:p></p:txBody></p:sp><p:sp><p:nvSpPr><p:cNvPr id="4" name="Slide Number Placeholder 3"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="sldNum" sz="quarter" idx="10"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:fld id="{F7021451-1387-4CA6-816F-3879F97B5CBC}" type="slidenum"><a:rPr lang="en-US"/><a:t>18</a:t></a:fld><a:endParaRPr lang="en-US"/></a:p></p:txBody></p:sp></p:spTree><p:extLst><p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}"><p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="1024086991"/></p:ext></p:extLst></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:notes>
