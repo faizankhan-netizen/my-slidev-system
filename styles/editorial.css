@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;700&display=swap');
+
+/* ================================================================
+   EDITORIAL STYLE: Minimalist / Magazine / Bold Swiss Design
+   ================================================================ */
+
+.slidev-layout.style-editorial {
+  --bg-primary: 0 0% 98%;
+  --bg-card: 0 0% 100%;
+  --text-main: 0 0% 10%;
+  --border-main: 0 0% 0%;
+  --accent-primary: 0 72% 51%; /* Editorial Red */
+  --accent-secondary: 210 20% 90%;
+  
+  font-family: 'Inter', sans-serif !important;
+  color: hsl(var(--text-main)) !important;
+  padding: 0 !important; /* Full bleed potential */
+  position: relative;
+  overflow: hidden !important;
+  background: hsl(var(--bg-primary)) !important;
+}
+
+/* Ensure ALL direct children of the slide (like center layout content) are above the red block */
+.slidev-layout.style-editorial > * {
+  position: relative;
+  z-index: 10;
+}
+
+/* === ASYMMETRIC COLOR BLOCK (::before) === */
+.slidev-layout.style-editorial::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%; /* Restored to original bold width */
+  height: 100%;
+  background: hsl(var(--accent-primary));
+  z-index: 0;
+}
+
+/* === FULL RED VARIANT === */
+.slidev-layout.style-editorial.variant-red {
+  background: hsl(var(--accent-primary)) !important;
+}
+
+.slidev-layout.style-editorial.variant-red h1,
+.slidev-layout.style-editorial.variant-red h2,
+.slidev-layout.style-editorial.variant-red .caption,
+.slidev-layout.style-editorial.variant-red p {
+  color: white !important;
+}
+
+/* === PAPER TEXTURE (::after) === */
+.slidev-layout.style-editorial::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+/* === EDITORIAL CONTENT WRAPPER === */
+.style-editorial .content-wrapper {
+  padding: 3rem 4rem !important; /* Restored original padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.style-editorial h1 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 4.5rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  text-transform: none !important;
+  margin-bottom: 1rem;
+  color: hsl(var(--text-main)) !important; /* Pure Black for overlap */
+}
+
+.style-editorial h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--accent-primary)); /* Red on white, or black on overlap? User says black for halfway */
+}
+
+/* === BOLD GRID CARDS === */
+.style-editorial .card {
+  position: relative;
+  background: white !important;
+  border: 4px solid black;
+  padding: 1.5rem;
+  box-shadow: 10px 10px 0px black;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
+  color: black !important;
+}
+
+.style-editorial .card h3 {
+  color: black !important;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.style-editorial .card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 15px 15px 0px hsl(var(--accent-primary));
+}
+
+/* === BOLD PILL === */
+.style-editorial .pill {
+  display: inline-block !important;
+  width: auto !important;
+  background: black !important;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  padding: 6px 16px;
+  margin-bottom: 1.5rem;
+}
+
+.style-editorial .caption {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid hsl(var(--accent-primary));
+  color: hsl(var(--text-main) / 0.8) !important;
+}
+
+/* Fix for Markdown highlights (bold) inside captions */
+.style-editorial .caption b, 
+.style-editorial .caption strong {
+  color: hsl(var(--accent-primary)) !important;
+  font-weight: 700;
+}
+
+/* Giant numbers for stats */
+.style-editorial .stat-giant {
+  font-family: 'Playfair Display', serif;
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 0.8;
+  margin-bottom: 0.5rem;
+  color: hsl(var(--text-main));
+}
+
+/* Overlap Structure */
+.style-editorial .content-wrapper {
+  padding: 3rem 4rem !important; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Changed from space-between to prevent bleeding */
+  gap: 1.5rem;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Scaled down for better fit */
+.style-editorial .stat-giant {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem; /* Reduced from 5rem */
+  font-weight: 900;
+  line-height: 0.8;
+  margin-top: 0.5rem;
+  color: hsl(var(--text-main));
+}
+
+.slidev-layout.style-editorial::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  background: hsl(var(--accent-primary));
+  z-index: 0;
+}
+
+/* Full Red Variant Legibility */
+.slidev-layout.style-editorial.variant-red {
+  background: hsl(var(--accent-primary)) !important;
+  padding: 1.5rem 4rem !important; /* Tightened padding */
+}
+
+.slidev-layout.style-editorial.variant-red h1,
+.slidev-layout.style-editorial.variant-red .caption,
+.slidev-layout.style-editorial.variant-red p {
+  color: white !important;
+}
+
+.slidev-layout.style-editorial.variant-red h1 {
+  font-size: 3.5rem !important; /* Aggressive reduction from 4rem */
+  margin-bottom: 0.5rem !important;
+}
+
+.slidev-layout.style-editorial.variant-red h2 {
+  color: black !important;
+  margin-bottom: 1rem !important;
+}
+
+.slidev-layout.style-editorial.variant-red .pill {
+  background: white !important;
+  color: black !important;
+  margin-bottom: 1rem !important;
+}
+
+.slidev-layout.style-editorial.variant-red .stat-giant {
+  color: white !important;
+  font-size: 5rem !important; /* Aggressive reduction from 6rem */
+}

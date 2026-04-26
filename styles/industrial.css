@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@400;900&display=swap');
+
+/* ================================================================
+   INDUSTRIAL STYLE: Structural / Engineering / Architectural
+   ================================================================ */
+
+.slidev-layout.style-industrial {
+  --bg-primary: 210 10% 15%;
+  --bg-card: 210 10% 20%;
+  --text-main: 0 0% 95%;
+  --border-main: 210 10% 30%;
+  --accent-primary: 24 95% 53%; /* Safety Orange */
+  --accent-secondary: 200 50% 60%; /* Steel Blue */
+  
+  font-family: 'Roboto Mono', monospace !important;
+  color: hsl(var(--text-main)) !important;
+  background: hsl(var(--bg-primary)) !important;
+  padding: 3rem 4rem !important;
+  position: relative;
+  overflow: hidden !important;
+}
+
+/* === BLUEPRINT GRID OVERLAY === */
+.slidev-layout.style-industrial::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.1;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, hsl(var(--accent-secondary)) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--accent-secondary)) 1px, transparent 1px);
+}
+
+/* === CONCRETE TEXTURE === */
+.slidev-layout.style-industrial::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png');
+}
+
+.style-industrial .content-wrapper {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.style-industrial h1 {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 4rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 1rem;
+  color: white !important;
+  border-left: 8px solid hsl(var(--accent-primary));
+  padding-left: 2rem;
+}
+
+.style-industrial h2 {
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: hsl(var(--accent-primary));
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.style-industrial h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: hsl(var(--border-main));
+}
+
+/* === STRUCTURAL CARDS === */
+.style-industrial .card {
+  background: hsl(var(--bg-card)) !important;
+  border: 1px solid hsl(var(--border-main));
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.style-industrial .card:hover {
+  border-color: hsl(var(--accent-primary));
+  background: hsl(var(--bg-card) / 1.5) !important;
+}
+
+/* Measurement Rulers on edges */
+.style-industrial .card::before {
+  content: '01 02 03 04 05';
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 8px;
+  color: hsl(var(--accent-primary) / 0.5);
+  letter-spacing: 2px;
+  padding: 4px;
+}
+
+/* === INDUSTRIAL LABELS === */
+.style-industrial .pill {
+  background: hsl(var(--accent-primary)) !important;
+  color: black !important;
+  font-weight: 900;
+  font-size: 10px;
+  padding: 4px 12px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* Measurement labels */
+.style-industrial .measurement {
+  font-size: 10px;
+  color: hsl(var(--accent-secondary));
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* Technical stats */
+.style-industrial .tech-stat {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  border-bottom: 2px solid hsl(var(--accent-primary));
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}

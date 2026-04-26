@@ -4,6 +4,9 @@
 @import './styles/cyber.css';
 @import './styles/eco.css';
 @import './styles/luxury.css';
+@import './styles/editorial.css';
+@import './styles/industrial.css';
+@import './styles/space.css';
 
 /* ================================================================
    GLOBAL OVERRIDES

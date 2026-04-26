@@ -69,6 +69,33 @@ This document is used by agents to select the correct visual archetype based on 
 *   **Pill**: Minimalist underline label with high letter-spacing.
 *   **Best For**: Product reveals, investor keynotes, premium vision statements.
 
+### 7. `style-editorial` — The Minimalist
+*   **Target**: Art Directors, Brand Strategists, Design Enthusiasts.
+*   **Vibe**: Minimalist, High-Fashion, Swiss Grid.
+*   **Background**: Stark White (`0 0% 98%`) with a bold vertical red accent block.
+*   **Texture**: "Stardust" paper grain texture for a tactile printed feel.
+*   **Cards**: Brutalist cards with **4px black borders** and heavy offset shadows.
+*   **Typography**: `Playfair Display` (Serif) + `Inter` (Sans). High-impact headings.
+*   **Best For**: Brand strategy, design portfolios, editorial narratives.
+
+### 8. `style-industrial` — The Structural
+*   **Target**: Engineers, Architects, Logistics Managers, Technical Teams.
+*   **Vibe**: Raw, Structural, Architectural.
+*   **Background**: Concrete Gray (`210 10% 15%`) with **blueprint grid overlays**.
+*   **Texture**: Concrete wall grain + technical measurement markers on card edges.
+*   **Cards**: Structural blocks with safety-orange accents and coordinate labels.
+*   **Typography**: `Roboto Mono` — clinical, precise, structural.
+*   **Best For**: Technical reports, infrastructure projects, engineering walkthroughs.
+
+### 9. `style-space` — The Cinematic
+*   **Target**: Future-Tech Visionaries, Aerospace, Keynote Audiences.
+*   **Vibe**: Vast, Epic, Cinematic.
+*   **Background**: Deep Space (`230 40% 5%`) with **animated starfields**.
+*   **Texture**: Pulsing "Nebula" mesh gradients and orbital geometry blurs.
+*   **Cards**: Glassmorphic "Orbital" containers with rotating light-rings.
+*   **Typography**: `Outfit` (Geometric) + `Space Mono` (Technical Data).
+*   **Best For**: Big-picture visions, space-tech, grand futuristic keynotes.
+
 ---
 
 ## 🧭 Decision Quick-Reference
@@ -78,38 +105,34 @@ This document is used by agents to select the correct visual archetype based on 
 | "Make it fun / engaging / for kids" | `style-school` |
 | "Make it professional / for investors" | `style-business` |
 | "Make it practical / training / how-to" | `style-workshop` |
-| "It's about history / science / tech" | `style-school` |
-| "It's about finance / strategy / ROI" | `style-business` |
-| "It's a hands-on workshop / field guide" | `style-workshop` |
+| "It's about high-tech / code / AI" | `style-cyber` |
+| "It's about nature / wellness / sustainability" | `style-eco` |
+| "It's a premium product / luxury reveal" | `style-luxury` |
+| "It's for designers / editorial / brand" | `style-editorial` |
+| "It's technical / engineering / infra" | `style-industrial` |
+| "It's a visionary keynote / space-tech" | `style-space` |
 
 ---
 
 ## 🛠️ Implementation Guide
 
 ### Step 1: Style Loading (Automatic)
-The global `style.css` auto-imports all three archetypes. **You do NOT need a `<style>` block in your slides.md.**
+The global `style.css` auto-imports all archetypes. **You do NOT need a `<style>` block in your slides.md.**
 
 ### Step 2: Slide-Level Activation
 Apply the archetype class in the slide's frontmatter:
 ```markdown
 ---
-layout: cards
-class: style-school
-pill: MODULE TITLE
-title: "The Main Heading"
+layout: default
+class: style-space
 ---
 ```
 
 ### Step 3: Component Usage
-Use standard class names within your HTML blocks to inherit the style:
-- **`.card`**: Primary content container (via `<SlideCard>` component).
-- **`.pill`**: Category label (via `<CategoryPill>` component).
-- **`.stat`**: Large stat number styling.
-- **`.formula`**: Code/formula display block.
-- **`.activity-box`**: Workshop-specific interactive prompt.
-
-### Step 4: Dark Mode
-All three archetypes support Slidev's dark mode toggle (press `d`):
-- **Business**: Light corporate → Dark slate
-- **School**: Neon cosmos (same dark feel in both modes)
-- **Workshop**: Warm paper → Blueprint mode
+Use standard class names within your HTML blocks:
+- **`.card`**: Primary container (via `<SlideCard>`).
+- **`.pill`**: Category label (via `<CategoryPill>`).
+- **`.stat-giant`**: High-impact editorial numbers.
+- **`.tech-stat`**: Technical engineering stats.
+- **`.measurement`**: Coordinate/Ruler markers.
+- **`.data-tag`**: Monospace technical labels.
