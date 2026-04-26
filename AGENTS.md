@@ -96,4 +96,16 @@ Write the slides using the component-driven system. Then run the **QA Protocol**
 
 ---
 
+## 🎬 Cinematic Engine V3 (Python Pipeline)
+
+For high-end, data-aware decks, use the Python pipeline in `scripts/slide_engine/`:
+1. **The Config**: All magic numbers and styles live in `config.py`. Edit this file to change the "feel" of the deck.
+2. **Component Sovereignty**: Media backgrounds are handled by the `<CinematicBackdrop />` Vue component.
+3. **BoundGuard Intelligence**: 
+   - **No-Bleed Rule**: All infographics (Cycles/Charts) have a mandatory 160px title buffer.
+   - **Auto-Scale**: Titles/Descriptions shrink based on character count automatically.
+4. **Clean Code Protocol**: Move complex HTML logic into `.vue` components. Python should only handle layout and data-mapping.
+
+---
+
 *"Maintain the DNA. Respect the Guide. Activate the Superpower."* ⚡

@@ -54,6 +54,11 @@ Each archetype imports a premium Google Font. Never override unless instructed:
 | **School** | `Outfit` | Geometric, vibrant, accessible |
 | **Workshop** | `Space Grotesk` | Pragmatic, technical, instructional |
 | **Cyber** | `JetBrains Mono` | High-tech, logical, terminal |
+| **Eco** | `Lora` | Organic, calm, established |
+| **Luxury** | `Cormorant Garamond`| Sophisticated, editorial, premium |
+| **Editorial** | `Playfair Display` | High-fashion, minimalist, Swiss |
+| **Industrial** | `Roboto Mono` | Structural, precise, architectural |
+| **Space** | `Outfit` / `Space Mono`| Epic, futuristic, visionary |
 
 ### Sizing Rules
 | Element | Size | Weight |
@@ -77,21 +82,30 @@ Break presentations into a 4-part narrative structure:
 
 ## 5. The Visual Layer System
 
-### Layer 1: Mesh Gradient Background
-Each archetype has atmospheric `radial-gradient()` blobs. These are animated with `cosmos-breathe` (15s cycle) in the School archetype.
+### Layer 1: Background Atmosphere
+Each archetype has atmospheric gradients or animated stars:
+- **School/Business**: Breathing mesh gradients.
+- **Eco**: Soft sage/cream organic blobs.
+- **Space**: Animated starfields and pulsing nebulas.
 
-### Layer 2: Background Texture
-A masked dot-grid (School/Business) or graph-paper grid (Workshop) adds professional depth. Cyber uses animated scanlines.
+### Layer 2: Surface Texture
+- **School/Business**: Masked dot-grids.
+- **Workshop**: Graph-paper grid.
+- **Cyber**: CRT scanlines.
+- **Editorial**: "Stardust" paper grain.
+- **Industrial**: Blueprint-style 40px grids.
 
-### Layer 3: Decorative Accents
+### Layer 3: Structural Flavour
 Pseudo-elements (`::before`/`::after`) create:
-- **School**: Floating neon particles (cyan + pink)
-- **Business**: Geometric corner accent (curved lines)
-- **Workshop**: Drafting ruler with tick marks, card tape strips
 - **Cyber**: Bracket accents `[...]` and terminal cursor `_`
+- **Eco**: Floating leaf accents `🍃`
+- **Luxury**: Animated gold-trim shimmers
+- **Editorial**: Asymmetric color blocks (Swiss Red)
+- **Industrial**: Coordinate markers and architectural rulers
+- **Space**: Orbital rings and light-flare shimmers
 
 ### Layer 4: Content
-All content sits at `z-index: 1` above decorative layers. Cards use multi-layered `box-shadow` for realistic depth.
+All content sits at `z-index: 1` above decorative layers. Cards use multi-layered `box-shadow` or glass blurs.
 
 ---
 
@@ -136,4 +150,51 @@ All content sits at `z-index: 1` above decorative layers. Cards use multi-layere
 
 ---
 
-*"The ideas are yours. AI is just the paintbrush."* ⚡
+## 📐 10. Archetype Engineering Rules (Crucial)
+
+### 10.1 Aesthetic Sovereignty (The "Structure" Rule)
+*   **Principle**: Never sacrifice a structural archetype (like the Editorial asymmetry) for a technical fix.
+*   **Action**: If text is illegible, fix the *color* or *contrast*, not the *positioning*. The asymmetry is the soul of the design.
+
+### 10.2 High-Contrast Dominance (The "Overlap" Rule)
+When text overlaps two backgrounds (e.g., Red Sidebar & White Main):
+*   **The Law**: Use a single "Dominance Color" that works on both. For Editorial, **Stark Black** font is the default for halfway overlaps.
+*   **The Constraint**: Do not use `mix-blend-mode`, gradients, or outlines. These often look "unclean" for modern standards.
+*   **Contextual Shift**: If a slide is 100% one color (e.g., `.variant-red`), switch to **White** text for main headings and **Black** for secondary indicators (pills) to ensure 100% contrast.
+
+### 10.3 Vertical Viewport Safety (The "Bleeding" Rule)
+Slidev viewports are finite. To prevent "bleeding" off the bottom:
+*   **Stat-Giant Cap**: Max size for giant numbers is **5rem** when headings/captions are present. Use **6rem** ONLY on empty focus slides.
+*   **Heading Density**: Headlines with more than 3 words must use `line-height: 1` or smaller to reclaim vertical space.
+*   **Layout Logic**: Prefer `justify-content: center` with a controlled `gap` over `space-between` to keep content within the safe zone.
+
+### 10.4 Technical Rendering Pitfalls
+*   **Markdown in HTML**: Standard markdown (`**bold**`) fails inside raw `<div>` tags in Slidev. Use `<b>` or `<strong>` for highlights within architectural components (like `.caption`).
+*   **Z-Index Hygiene**: Background blocks (like `::before`) must stay at `z-index: 0`. All content must be `position: relative; z-index: 10;` to prevent physical obstruction.
+
+---
+
+## 🏗️ 11. Cinematic Engine V3: Advanced Layouts & Intelligence
+
+### 11.1 BoundGuard Spatial Intelligence
+The engine is now "Viewport Aware." It automatically adjusts layouts to prevent text bleeding:
+- **Auto-Scaling**: Titles and descriptions shrink dynamically based on character count.
+- **Title Clearance**: Infographics (Cycles/Charts) maintain a strict **160px buffer** from the top.
+- **Auto-Pagination**: Large lists (Process/Agenda) are automatically split into multiple slides with "(1/n)" pagination suffixes.
+
+### 11.2 Interactive Infrastructure
+- **Guerrilla GUI**: Slides with video backgrounds feature a hidden hover-reveal input in the bottom-right for live media swapping.
+- **YouTube-Embed Logic**: Pasting a YouTube link into the GUI or the Python API automatically converts it into a cinematic, muted background.
+- **Module Hub**: The `agenda` template is now a clickable "Module Hub." Use `@click="$nav.go(N)"` to create jump-links between presentation acts.
+
+### 11.3 New High-Fidelity Archetypes
+| Type | Usage | Intelligence |
+| :--- | :--- | :--- |
+| `cycle` | Circular flows | Auto-calculates orbital math for 1-6 nodes. |
+| `chart` | Data Trends | Uses theme-aware HSL palettes to match the deck's archetype. |
+| `media_focus` | Product Demos | Auto-detects YouTube/Video and enables playback controls. |
+| `table` | Data Sheets | Glassmorphic striped rows with automated HSL contrast. |
+
+---
+
+*"The ideas are yours. AI is just the paintbrush. The structure is sacred."* ⚡

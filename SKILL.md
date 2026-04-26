@@ -75,11 +75,13 @@ We use a **Hybrid Layout** because it combines the precision of absolute graphic
    - `<SlideCard>`: Accepts `title`, `icon`, `stat`, `titleColor`, and `borderTop` props.
    - `<LiveChart>`: Accepts `option` (JSON object of ECharts config), `width`, and `height`. Use for animated, dynamic data visualizations (especially in Business/Technical styles).
 
-4. **Premium Typography Engine**
-   We utilize imported Google Fonts to give each archetype a distinct, high-end feel. Do not override these unless instructed:
-   - **Business:** `Inter` (Sharp, credible, corporate)
-   - **School:** `Outfit` (Geometric, vibrant, accessible)
-   - **Workshop:** `Space Grotesk` (Pragmatic, technical, instructional)
+    - **Business:** `Inter` (Sharp, credible, corporate)
+    - **School/Space:** `Outfit` (Geometric, vibrant, accessible)
+    - **Workshop:** `Space Grotesk` (Pragmatic, technical, instructional)
+    - **Cyber/Industrial:** `Roboto Mono` / `JetBrains Mono` (Technical, structural)
+    - **Eco:** `Lora` (Organic, established serif)
+    - **Luxury:** `Cormorant Garamond` (Sophisticated, editorial)
+    - **Editorial:** `Playfair Display` (High-fashion serif)
 
 5. **HSL Color Engine (The Alpha Superpower)**
    All CSS variables store raw HSL *channel values* — NOT full hex codes or hsl() wrappers.
@@ -101,10 +103,15 @@ We use a **Hybrid Layout** because it combines the precision of absolute graphic
    Each archetype's background is now a layered CSS mesh gradient using `radial-gradient()`. Cards and pills use **glassmorphism**: `backdrop-filter: blur()` with semi-transparent `hsl()` backgrounds and inset highlights.
    
    *Archetype Visual Signatures:*
-   - **Business:** Faint orange + blue radial blobs over clean slate. Glass cards with subtle `inset 0 1px 0` highlight and hover lift.
-   - **School:** Four-colour neon cosmos (Cyan + Pink + Gold + Purple). Cards are near-invisible frosted glass. Headings have a `text-shadow` neon glow.
-   - **Workshop (Light):** Warm amber gradient blobs over cream paper. Sticky-note cards have a slight rotation and authentic dashed borders.
-   - **Workshop (Dark):** Blueprint mode — cool blue mesh gradient. Same card structure recoloured to engineering blueprint aesthetic.
+   - **Business:** Faint orange + blue radial blobs. Glass cards with corporate lift.
+   - **School:** Four-colour neon cosmos. Frosted glass with neon-glow headings.
+   - **Workshop:** Warm paper (light) or Blueprint (dark). Sticky-note cards with tape.
+   - **Cyber:** Scanlines + CRT flicker. Terminal blocks with `[...]` prompts.
+   - **Eco:** Sage grain + leaf drift. 24px large-radius organic cards.
+   - **Luxury:** Silk lines + light-leaks. Sharp gold-trim glass shimmers.
+   - **Editorial:** Swiss red blocks + paper grain. Brutalist cards with 4px borders.
+   - **Industrial:** Blueprint grids + rulers. Structural cards with tech labels.
+   - **Space:** Animated starfields + nebula. Orbital glass with light-rings.
    
    **Critical Rule:** Do NOT add `background` inline styles to slides using these archetypes. The mesh gradient lives in the CSS and must not be overridden.
 
@@ -136,17 +143,17 @@ We use a **Hybrid Layout** because it combines the precision of absolute graphic
 ### 🎨 Style Presets & Theming
 We have pre-designed CSS contexts in the `styles/` folder. Apply them to match your audience:
 
-1. **Importing Styles**: Add the import at the top of your global `<style>` block:
-   ```css
-   @import './styles/school.css';
-   @import './styles/business.css';
-   @import './styles/workshop.css';
-   ```
-
+1. **Importing Styles**: All archetypes are imported automatically via `style.css`.
 2. **Applying to Slides**: Use the corresponding class in your frontmatter:
-   - **`style-school`**: Vibrant, rounded, neon accents (For students).
-   - **`style-business`**: Structured, Slate/Navy, trust-focused (For corporate).
-   - **`style-workshop`**: Warm paper, dashed lines, action-oriented (For training).
+   - **`style-school`**: Neon, particles, student-focused.
+   - **`style-business`**: Corporate, structured, ROI-focused.
+   - **`style-workshop`**: Action-oriented, blueprint/paper.
+   - **`style-cyber`**: High-tech, devs, terminal.
+   - **`style-eco`**: Sustainable, wellness, organic.
+   - **`style-luxury`**: Premium, visionary, keynotes.
+   - **`style-editorial`**: Brand, portfolio, Swiss design.
+   - **`style-industrial`**: Technical, infra, logistics.
+   - **`style-space`**: Cinematic, future-tech, aerospace.
 
    Example:
    ```markdown
@@ -165,7 +172,14 @@ We have pre-designed CSS contexts in the `styles/` folder. Apply them to match y
 6. **Icon Sibling Safety:** Never place a `<carbon:icon />` as a direct sibling of a `<div>` inside a flex container. Wrap icons in a `<span>` to prevent template parsing crashes.
 7. **Safe Zone Discipline:** To respect the `3.5rem` safety buffer, cap main titles at `2.8rem` - `3.2rem` and use `width: 100%` on containers to ensure they wrap within the padding instead of overflowing.
 8. **No Trailing Separator:** Never leave a `---` separator at the very end of the file. Slidev interprets this as the start of a new slide, resulting in an unintended blank slide at the end of your presentation.
-9. **No Tailwind Arbitrary Values:** Avoid `w-[350px]` in Vue templates; use `style="width: 350px"` to prevent parser confusion.
+10. **Cinematic Engine V3 (Interaction & Intelligence)**
+    For complex, data-rich decks, use the automated Python pipeline in `scripts/slide_engine/`. 
+    - **Spatial Intelligence**: BoundGuard automatically calculates "Title Clearance" (160px buffer) and "Safe Orbits" for infographics (Cycles/Charts).
+    - **Interaction Shielding**: Content layers use `pointer-events: none` on wrappers and `pointer-events: auto` on children to allow mouse events to reach background videos while keeping text interactive.
+    - **Single-Line Reactive HTML**: **CRITICAL.** Any reactive HTML (e.g., `<video v-if="...">`) must be written as a **single-line string** with NO internal newlines. Slidev's Markdown parser wraps multi-line HTML blocks in `<p>` tags, which interrupts the Vue template and causes "missing end tag" compiler errors.
+    - **Guerrilla GUI**: Slides with `bg_video_url` feature a hover-reveal input in the bottom-right for live media swapping.
+
+11. **No Tailwind Arbitrary Values:** Avoid `w-[350px]` in Vue templates; use `style="width: 350px"` to prevent parser confusion.
 
 
 
@@ -216,12 +230,14 @@ Every slide must have a **visual element** — background shape, icon, image, or
 
 | Audience | Palette Strategy | Layout Strategy | Energy |
 |----------|-----------------|-----------------|--------|
-| **School Students (6–10)** | Vibrant: Indigo + Orange + Teal + Yellow | Rounded cards, large emoji, massive type | Max energy, floating circles, animations |
-| **School Students (11–12)** | Bold: Navy + Electric Blue + Coral | Two-col, fact, image-right | High energy, icons, `v-click` reveals |
-| **Corporate/Government** | Deep: Navy + Gold + Off-white | `quote`, `fact`, data tables | Premium, no gimmicks |
-| **Developers/Technical** | Dark: Charcoal + Accent + Code blocks | `two-cols` with code, terminal aesthetic | Clean, precise |
-| **Awareness/Social** | Calm: Sage + Cream + Warm Accent | `center`, flowing text, imagery | Emotional, spacious |
-| **Luxury** | Dark: Midnight Obsidian + Gold | `split` with cinematic images | Sophisticated, visionary |
+| **Students** | Vibrant: Indigo + Orange + Neon | Large emoji, massive type | Max |
+| **Corporate** | Deep: Navy + Gold + Slate | Data tables, structured cards | Credible |
+| **Developers** | Dark: Matrix Black + Green | `two-cols` with code, terminal | Logic |
+| **Sustainability**| Calm: Sage + Forest Green | Organic cards, leaf accents | Grounded |
+| **Luxury** | Dark: Obsidian + Gold dust | Cinematic images, silk lines | Premium |
+| **Brand/Design** | Stark: White + Swiss Red | Asymmetric grids, serif type | Creative |
+| **Engineering** | Technical: Concrete + Orange | Blueprint grids, rulers | Rigid |
+| **Visionaries** | Epic: Deep Space + Nebula | Orbital glass, starfields | Visionary |
 
 ---
 
@@ -378,7 +394,13 @@ slidev/
 ├── templates/             # Starter boilerplate for each archetype
 │   ├── school.md
 │   ├── business.md
-│   └── workshop.md
+│   ├── workshop.md
+│   ├── cyber.md
+│   ├── eco.md
+│   ├── luxury.md
+│   ├── editorial.md
+│   ├── industrial.md
+│   └── space.md
 ├── scripts/               # Automation
 │   └── optimize-assets.js # PNG→WebP asset pipeline
 ├── uno.config.ts          # UnoCSS with HSL token shortcuts
