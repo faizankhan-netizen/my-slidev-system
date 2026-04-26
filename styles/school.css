@@ -32,14 +32,14 @@
   --accent-secondary: 330 81% 60%;
   --accent-tertiary: 48 96% 53%;
   
-  font-family: 'Outfit', sans-serif !important;
-  color: hsl(var(--text-main)) !important;
+  font-family: var(--font-base, 'Outfit', sans-serif) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   padding: 3.5rem !important;
   position: relative;
   overflow: hidden !important;
 
   /* NEON COSMOS MESH GRADIENT with animation */
-  background: hsl(var(--bg-primary)) !important;
+  background: var(--slide-bg, hsl(var(--bg-primary))) !important;
 }
 
 /* === ANIMATED GRADIENT BLOBS (::before) === */
@@ -108,7 +108,7 @@ html.dark .slidev-layout.style-school {
   --accent-primary: 188 86% 53%;
   --accent-secondary: 330 81% 60%;
   --accent-tertiary: 48 96% 53%;
-  background: hsl(var(--bg-primary)) !important;
+  background: var(--slide-bg, hsl(var(--bg-primary))) !important;
 }
 
 /* === GLASSMORPHISM CARDS (Deep Space Frost) === */

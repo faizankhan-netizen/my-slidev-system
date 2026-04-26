@@ -24,8 +24,8 @@
   --accent-secondary: 45 30% 20%;
   --accent-tertiary: 45 100% 75%;
   
-  font-family: 'Cormorant Garamond', serif !important;
-  color: hsl(var(--text-main)) !important;
+  font-family: var(--font-base, 'Cormorant Garamond', serif) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   padding: 3.5rem !important;
   position: relative;
   overflow: hidden !important;
@@ -127,7 +127,7 @@
 }
 
 .style-luxury h1, .style-luxury h2 {
-  color: hsl(var(--text-main)) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   font-weight: 300; /* Light for elegance */
   letter-spacing: 0.05em;
   text-transform: uppercase;

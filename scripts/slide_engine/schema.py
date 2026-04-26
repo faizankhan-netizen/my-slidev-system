@@ -37,3 +37,5 @@ class SlideContent:
     # Design Hints
     energy: str = "medium" # calm, medium, high
     bg_tone: str = "dark" # dark, light
+    custom_bg: Optional[str] = None
+    custom_text: Optional[str] = None

@@ -24,8 +24,8 @@
   --accent-secondary: 46 97% 65%;
   --accent-tertiary: 38 92% 50%;
   
-  font-family: 'Space Grotesk', sans-serif !important;
-  color: hsl(var(--text-main)) !important;
+  font-family: var(--font-base, 'Space Grotesk', sans-serif) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   padding: 3.5rem !important;
   position: relative;
   overflow: hidden !important;
@@ -169,7 +169,7 @@ html.dark .slidev-layout.style-workshop {
 }
 
 .style-workshop h1, .style-workshop h2 {
-  color: hsl(var(--text-main)) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   text-transform: uppercase;
   border-bottom: 3px solid hsl(var(--accent-secondary));
   display: inline-block;

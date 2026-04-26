@@ -30,8 +30,8 @@
   --accent-secondary: 142 70% 50%;
   --accent-tertiary: 142 70% 80%;
   
-  font-family: 'JetBrains Mono', monospace !important;
-  color: hsl(var(--text-main)) !important;
+  font-family: var(--font-base, 'JetBrains Mono', monospace) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   padding: 3.5rem !important;
   position: relative;
   overflow: hidden !important;
@@ -146,7 +146,7 @@
 }
 
 .style-cyber h1, .style-cyber h2 {
-  color: hsl(var(--text-main)) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   position: relative;

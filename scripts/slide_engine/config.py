@@ -8,7 +8,12 @@ SPATIAL = {
     "title_clearance_aggressive": 160,
     "cycle_radius_max": 120,
     "cycle_node_default": 90,
-    "pagination_limit": 4,
+    "limits": {
+        "default": 4,
+        "cycle": 6,
+        "agenda": 6,
+        "feature_grid": 4
+    }
 }
 
 # --- Visual Tokens ---

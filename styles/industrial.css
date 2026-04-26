@@ -12,9 +12,9 @@
   --accent-primary: 24 95% 53%; /* Safety Orange */
   --accent-secondary: 200 50% 60%; /* Steel Blue */
   
-  font-family: 'Roboto Mono', monospace !important;
-  color: hsl(var(--text-main)) !important;
-  background: hsl(var(--bg-primary)) !important;
+  font-family: var(--font-base, 'Roboto Mono', monospace) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
+  background: var(--slide-bg, hsl(var(--bg-primary))) !important;
   padding: 3rem 4rem !important;
   position: relative;
   overflow: hidden !important;
@@ -53,7 +53,7 @@
 }
 
 .style-industrial h1 {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-base, 'Inter', sans-serif) !important;
   font-weight: 900 !important;
   font-size: 4rem !important;
   text-transform: uppercase !important;
