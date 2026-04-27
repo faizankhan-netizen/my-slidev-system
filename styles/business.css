@@ -25,8 +25,8 @@
   --accent-secondary: 217 33% 17%;
   --accent-tertiary: 226 71% 40%;
   
-  font-family: 'Inter', sans-serif !important;
-  color: hsl(var(--text-main)) !important;
+  font-family: var(--font-base, 'Inter', sans-serif) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   padding: 3.5rem !important;
   position: relative;
   overflow: hidden !important;
@@ -36,7 +36,7 @@
     radial-gradient(ellipse 90% 60% at 0%   0%,   hsl(25  95% 53% / 0.18) 0%, transparent 55%),
     radial-gradient(ellipse 70% 65% at 100% 100%,  hsl(226 71% 60% / 0.16) 0%, transparent 55%),
     radial-gradient(ellipse 50% 40% at 50%  110%,  hsl(25  95% 53% / 0.08) 0%, transparent 50%),
-    hsl(var(--bg-primary)) !important;
+    var(--slide-bg, hsl(var(--bg-primary))) !important;
 }
 
 /* === GEOMETRIC LINE ACCENTS (::before) === */
@@ -83,7 +83,7 @@ html.dark .slidev-layout.style-business {
     radial-gradient(ellipse 80% 55% at 5%   5%,   hsl(217 91% 60% / 0.25) 0%, transparent 55%),
     radial-gradient(ellipse 65% 60% at 95%  90%,   hsl(25  95% 53% / 0.20) 0%, transparent 55%),
     radial-gradient(ellipse 40% 40% at 50%  -10%,  hsl(217 33% 17% / 0.80) 0%, transparent 70%),
-    hsl(var(--bg-primary)) !important;
+    var(--slide-bg, hsl(var(--bg-primary))) !important;
 }
 
 /* Dark mode corner accent — use blue instead of orange */
@@ -162,7 +162,7 @@ html.dark .slidev-layout.style-business::before {
 }
 
 .style-business h1, .style-business h2, .style-business .title {
-  color: hsl(var(--text-main)) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   font-weight: 800;
   letter-spacing: -0.03em;
   border-left: 8px solid hsl(var(--accent-primary));

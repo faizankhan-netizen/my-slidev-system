@@ -12,12 +12,12 @@
   --accent-primary: 0 72% 51%; /* Editorial Red */
   --accent-secondary: 210 20% 90%;
   
-  font-family: 'Inter', sans-serif !important;
-  color: hsl(var(--text-main)) !important;
+  font-family: var(--font-base, 'Inter', sans-serif) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
   padding: 0 !important; /* Full bleed potential */
   position: relative;
   overflow: hidden !important;
-  background: hsl(var(--bg-primary)) !important;
+  background: var(--slide-bg, hsl(var(--bg-primary))) !important;
 }
 
 /* Ensure ALL direct children of the slide (like center layout content) are above the red block */
@@ -73,13 +73,13 @@
 }
 
 .style-editorial h1 {
-  font-family: 'Playfair Display', serif !important;
+  font-family: var(--font-base, 'Playfair Display', serif) !important;
   font-size: 4.5rem !important;
   line-height: 1 !important;
   font-weight: 900 !important;
   text-transform: none !important;
   margin-bottom: 1rem;
-  color: hsl(var(--text-main)) !important; /* Pure Black for overlap */
+  color: var(--slide-text, hsl(var(--text-main))) !important; /* Pure Black for overlap */
 }
 
 .style-editorial h2 {

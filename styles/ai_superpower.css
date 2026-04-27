@@ -1,0 +1,76 @@
+/* 
+  ARCHETYPE: AI Superpower ⚡ (V4 ORCHESTRATOR COMPLIANT)
+  DNA: No Logic. Only Variables and Animations.
+*/
+
+.style-ai-superpower {
+  /* The Orchestrator sets these via frontmatter */
+  background: var(--slide-bg) !important;
+  color: var(--slide-text) !important;
+  font-family: var(--font-base) !important;
+  
+  transition: background 0.8s ease-in-out, color 0.8s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 1. Floating Kinetic Shapes (Always visible) */
+.style-ai-superpower::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  opacity: 0.3;
+  animation: drift 20s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+.style-ai-superpower::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--slide-text) 0%, transparent 70%);
+  bottom: -150px;
+  left: -150px;
+  opacity: 0.1;
+  animation: drift 15s infinite alternate-reverse ease-in-out;
+  z-index: 0;
+}
+
+@keyframes drift {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(10%, 10%) rotate(20deg); }
+}
+
+/* 2. Headers and Typography */
+.style-ai-superpower h1,
+.style-ai-superpower h2,
+.style-ai-superpower h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: var(--slide-text) !important;
+}
+
+/* 3. Components */
+.style-ai-superpower .pill {
+  background: var(--accent-primary) !important;
+  color: var(--slide-bg) !important; /* Inverse contrast */
+  font-weight: 700 !important;
+}
+
+.style-ai-superpower .grid-box {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px;
+}
+
+.style-ai-superpower .stat-value {
+  color: var(--accent-primary) !important;
+  text-shadow: 0 0 30px var(--accent-primary);
+}

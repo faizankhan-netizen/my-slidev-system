@@ -172,12 +172,16 @@ We have pre-designed CSS contexts in the `styles/` folder. Apply them to match y
 6. **Icon Sibling Safety:** Never place a `<carbon:icon />` as a direct sibling of a `<div>` inside a flex container. Wrap icons in a `<span>` to prevent template parsing crashes.
 7. **Safe Zone Discipline:** To respect the `3.5rem` safety buffer, cap main titles at `2.8rem` - `3.2rem` and use `width: 100%` on containers to ensure they wrap within the padding instead of overflowing.
 8. **No Trailing Separator:** Never leave a `---` separator at the very end of the file. Slidev interprets this as the start of a new slide, resulting in an unintended blank slide at the end of your presentation.
-10. **Cinematic Engine V3 (Interaction & Intelligence)**
-    For complex, data-rich decks, use the automated Python pipeline in `scripts/slide_engine/`. 
-    - **Spatial Intelligence**: BoundGuard automatically calculates "Title Clearance" (160px buffer) and "Safe Orbits" for infographics (Cycles/Charts).
-    - **Interaction Shielding**: Content layers use `pointer-events: none` on wrappers and `pointer-events: auto` on children to allow mouse events to reach background videos while keeping text interactive.
-    - **Single-Line Reactive HTML**: **CRITICAL.** Any reactive HTML (e.g., `<video v-if="...">`) must be written as a **single-line string** with NO internal newlines. Slidev's Markdown parser wraps multi-line HTML blocks in `<p>` tags, which interrupts the Vue template and causes "missing end tag" compiler errors.
-    - **Guerrilla GUI**: Slides with `bg_video_url` feature a hover-reveal input in the bottom-right for live media swapping.
+10. **Cinematic Engine V5.1 (Intelligent Automation)**
+    For high-end, data-aware decks, use the automated Python pipeline in `scripts/slide_engine/`. 
+    - **Topic Intelligence**: The engine auto-resolves archetypes (now includes `style-research` for academic topics).
+    - **Narrative Arc**: Decks follow an energy-pacing arc (Hook → Context → Body → Climax → Reflection → Closer).
+    - **Scholarly Pacing**: For research, prioritize **Vertical Stacks** (`.smart-art-stack`) over horizontal grids to prevent academic text bleed.
+    - **Vibrant Variety**: Background colors and textures (Grid, Lined, Dots) rotate automatically per slide.
+    - **Design Sovereignty**: Visuals are locked in CSS. Python only emits semantic classes (`.card`, `.pill`, `.stat`).
+    - **Specificity Safety**: `custom_bg` now automatically disables energy-based class variants to prevent background conflicts.
+    - **Opt-In Visuals**: Emojis and sparkles are disabled by default (`schema.py`) to maintain a serious tone in academic contexts.
+    - **Luminance Safety**: Orchestrator auto-adjusts text contrast based on background saturation.
 
 11. **No Tailwind Arbitrary Values:** Avoid `w-[350px]` in Vue templates; use `style="width: 350px"` to prevent parser confusion.
 

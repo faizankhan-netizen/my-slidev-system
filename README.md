@@ -2,14 +2,14 @@
 
 A high-performance, cinematic presentation engine built on **Slidev**. Designed for creating premium, Indocentric, and interactive slide decks.
 
-## 🌟 Key Features
-- **9 Cinematic Archetypes**: Pre-styled visual languages including `luxury`, `cyber`, `eco`, `editorial`, `industrial`, and `space`.
+## 🌟 Key Features (Cinematic V5)
+- **Design Sovereignty**: Automated separation of Narrative (Python) and Visuals (CSS).
+- **Topic Intelligence**: AI-powered archetype auto-resolution based on context/audience signals.
+- **Narrative Arc Engine**: Automated energy-pacing (Hook → Body → Climax → Closer).
+- **Vibrant Variety**: Dynamic background color palettes and texture rotation (Grid/Lined/Dots).
+- **9 Cinematic Archetypes**: `luxury`, `cyber`, `eco`, `editorial`, `industrial`, `space`, and more.
 - **Mission Control**: Integrated remote control system for mobile devices (`npm run remote`).
-- **Tokenized HSL Architecture**: Dynamic color shifting with HSL channel variables.
-- **Visual Depth**: Multi-layered backgrounds with mesh gradients, starfields, and textures.
-- **Glassmorphism**: Premium frosted-glass card components with multi-layered depth shadows.
-- **Interactive Components**: `SlideCard`, `CategoryPill`, and `MobileRemote`.
-- **Global Tunnels**: Present anywhere with `npm run tunnel` (Cloudflare integration).
+- **BoundGuard 2.0**: Intelligent text-bleed prevention and spatial infographic scaling.
 
 ## 🚀 Quick Start
 1. **Install Dependencies**: `npm install`

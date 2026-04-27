@@ -1,199 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Gochi+Hand&display=swap');
 
 /* ================================================================
-   SCHOOL STYLE: Neon Cosmos + Glassmorphism + Decorative Elements
+   SCHOOL STYLE V3: High-Saturation Vibrant Classroom
    ================================================================ */
 
-/* === BREATHING BLOB ANIMATION === */
-@keyframes cosmos-breathe {
-  0%, 100% { transform: scale(1) translate(0, 0); }
-  25%      { transform: scale(1.08) translate(2%, -1%); }
-  50%      { transform: scale(0.95) translate(-1%, 2%); }
-  75%      { transform: scale(1.05) translate(-2%, -1%); }
+.slidev-page, .slide-container, .slide-content {
+  background: transparent !important;
 }
 
-@keyframes neon-pulse {
-  0%, 100% { opacity: 0.4; }
-  50%      { opacity: 0.7; }
-}
-
-@keyframes float-particle {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-  50%      { transform: translateY(-12px) scale(1.2); opacity: 0.7; }
-}
-
-/* Root variables */
 .slidev-layout.style-school {
-  --bg-primary: 229 84% 5%;
-  --bg-card: 0 0% 100%;
-  --text-main: 0 0% 100%;
-  --border-main: 0 0% 100%;
-  --accent-primary: 188 86% 53%;
-  --accent-secondary: 330 81% 60%;
-  --accent-tertiary: 48 96% 53%;
+  --text-main: #1A1A1A;
+  --accent-primary: #FFFFFF;
+  --accent-secondary: #EAB308;
   
   font-family: 'Outfit', sans-serif !important;
-  color: hsl(var(--text-main)) !important;
+  color: var(--slide-text, var(--text-main)) !important;
+  
+  background-color: var(--slide-bg) !important;
+  background-image: none !important;
   padding: 3.5rem !important;
+  transition: background-color 0.8s ease-in-out, color 0.5s ease;
   position: relative;
   overflow: hidden !important;
-
-  /* NEON COSMOS MESH GRADIENT with animation */
-  background: hsl(var(--bg-primary)) !important;
 }
 
-/* === ANIMATED GRADIENT BLOBS (::before) === */
+/* --- TEXTURE VARIANTS (using ::before for layering) --- */
+
 .slidev-layout.style-school::before {
   content: '';
   position: absolute;
-  inset: -20%;
-  z-index: 0;
-  animation: cosmos-breathe 15s ease-in-out infinite;
-  background:
-    radial-gradient(ellipse 50% 40% at 8%   12%,  hsl(188 86% 53% / 0.38) 0%, transparent 55%),
-    radial-gradient(ellipse 45% 35% at 92%  8%,   hsl(330 81% 60% / 0.32) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 38% at 82%  88%,  hsl(48  96% 53% / 0.22) 0%, transparent 50%),
-    radial-gradient(ellipse 38% 35% at 12%  82%,  hsl(280 70% 60% / 0.28) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-/* === DOT GRID TEXTURE (::after) === */
-.slidev-layout.style-school::after {
-  content: '';
-  position: absolute;
   inset: 0;
+  pointer-events: none;
   z-index: 0;
-  opacity: 0.35;
-  background-image: radial-gradient(circle, hsl(0 0% 100% / 0.15) 1px, transparent 1px);
-  background-size: 32px 32px;
-  pointer-events: none;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 80%);
+  opacity: 0.2; /* Subtle texture */
 }
 
-/* === FLOATING NEON PARTICLES === */
-.style-school .card::before {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: hsl(var(--accent-primary));
-  top: -8px;
-  right: 20%;
-  box-shadow: 0 0 12px hsl(var(--accent-primary) / 0.7);
-  animation: float-particle 4s ease-in-out infinite;
-  pointer-events: none;
+/* 1. Lined Paper */
+.slidev-layout.style-school.variant-lined::before {
+  background-image: linear-gradient(currentColor 1px, transparent 1px);
+  background-size: 100% 3rem;
 }
 
-.style-school .card::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: hsl(var(--accent-secondary));
-  bottom: -6px;
-  left: 15%;
-  box-shadow: 0 0 10px hsl(var(--accent-secondary) / 0.6);
-  animation: float-particle 5s ease-in-out 1s infinite;
-  pointer-events: none;
+/* 2. Grid Paper */
+.slidev-layout.style-school.variant-grid::before {
+  background-image: 
+    linear-gradient(currentColor 1px, transparent 1px),
+    linear-gradient(90deg, currentColor 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
 }
 
-html.dark .slidev-layout.style-school {
-  --bg-primary: 229 84% 5%;
-  --bg-card: 0 0% 100%;
-  --text-main: 0 0% 100%;
-  --border-main: 0 0% 100%;
-  --accent-primary: 188 86% 53%;
-  --accent-secondary: 330 81% 60%;
-  --accent-tertiary: 48 96% 53%;
-  background: hsl(var(--bg-primary)) !important;
+/* 3. Dot Paper */
+.slidev-layout.style-school.variant-dots::before {
+  background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+  background-size: 2rem 2rem;
 }
 
-/* === GLASSMORPHISM CARDS (Deep Space Frost) === */
+/* 4. Notebook (Double Line) */
+.slidev-layout.style-school.variant-notebook::before {
+  background-image: 
+    linear-gradient(currentColor 1px, transparent 1px),
+    linear-gradient(currentColor 1px, transparent 1px);
+  background-position: 0 0, 0 4px;
+  background-size: 100% 3rem;
+}
+
+/* --- COMPONENTS (Vibrant Adaptations) --- */
+
 .style-school .card {
-  position: relative;
-  background: hsl(var(--bg-card) / 0.08) !important;
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid transparent !important;
-  border-radius: 20px;
-  padding: 1.5rem;
-  /* Gradient border — catches the neon light */
-  background-clip: padding-box !important;
-  outline: 1px solid hsl(var(--border-main) / 0.12);
-  /* Multi-layered depth shadows */
-  box-shadow:
-    0 2px 4px hsl(0 0% 0% / 0.20),
-    0 8px 20px hsl(0 0% 0% / 0.25),
-    0 20px 50px hsl(0 0% 0% / 0.30),
-    inset 0 1px 0 hsl(0 0% 100% / 0.12),
-    inset 0 -1px 0 hsl(0 0% 0% / 0.10),
-    inset 0 0 30px hsl(var(--accent-primary) / 0.04);
-  transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.25s ease, outline-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #1A1A1A !important;
+  border: 4px solid #1A1A1A !important;
+  border-radius: 24px;
+  box-shadow: 12px 12px 0px rgba(0,0,0,0.15);
+  padding: 1.8rem;
   z-index: 1;
 }
 
-.style-school .card:hover {
-  transform: translateY(-3px) scale(1.015);
-  background: hsl(var(--bg-card) / 0.12) !important;
-  outline-color: hsl(var(--accent-primary) / 0.25);
-  box-shadow:
-    0 4px 8px hsl(0 0% 0% / 0.25),
-    0 12px 30px hsl(0 0% 0% / 0.30),
-    0 28px 65px hsl(0 0% 0% / 0.35),
-    inset 0 1px 0 hsl(0 0% 100% / 0.18),
-    inset 0 0 40px hsl(var(--accent-primary) / 0.08);
-}
-
-/* === NEON FROSTED PILL === */
 .style-school .pill {
-  display: inline-block !important;
-  width: auto !important;
-  background: hsl(var(--accent-secondary) / 0.88) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: white;
-  font-size: 10px;
+  background: #1A1A1A !important;
+  color: white !important;
   font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  padding: 6px 18px;
-  border-radius: 9999px;
-  border: 1px solid hsl(var(--accent-secondary) / 0.5);
-  box-shadow:
-    0 0 24px hsl(var(--accent-secondary) / 0.55),
-    0 0 60px hsl(var(--accent-secondary) / 0.20);
-  margin-bottom: 0.8rem;
-  position: relative;
+  padding: 6px 20px;
+  border-radius: 12px;
+  transform: rotate(-1.5deg);
+  display: inline-block;
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
   z-index: 1;
-  animation: neon-pulse 3s ease-in-out infinite;
+  border: 2px solid white;
 }
 
-.style-school h1, .style-school h2 {
-  color: hsl(var(--accent-primary)) !important;
+.style-school h1 {
   font-weight: 900;
-  letter-spacing: -0.04em;
-  text-shadow: 0 0 50px hsl(var(--accent-primary) / 0.50);
-  position: relative;
+  color: inherit !important;
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
   z-index: 1;
+  letter-spacing: -2px;
 }
 
-.style-school .formula {
-  background: hsl(0 0% 100% / 0.08);
-  backdrop-filter: blur(10px);
-  color: hsl(var(--accent-tertiary));
-  padding: 1rem;
-  border-radius: 16px;
-  border: 1px solid hsl(0 0% 100% / 0.1);
-  font-family: 'JetBrains Mono', monospace;
-  position: relative;
-  z-index: 1;
-}
-
-/* === STAT NUMBERS === */
 .style-school .stat {
-  color: hsl(var(--accent-primary)) !important;
-  text-shadow: 0 0 35px hsl(var(--accent-primary) / 0.45);
+  font-family: 'Gochi Hand', cursive;
+  font-size: 7rem;
+  line-height: 0.8;
+  color: var(--accent-secondary) !important;
+  z-index: 1;
+  -webkit-text-stroke: 2px #1A1A1A;
+}
+
+/* Doodle Decorations */
+.style-school::after {
+  content: '✎';
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 4rem;
+  opacity: 0.1;
+  transform: rotate(20deg);
+  pointer-events: none;
 }

@@ -4,7 +4,7 @@ from .config import SPATIAL
 
 class BoundGuard:
     def paginate(self, slide: SlideContent) -> list[SlideContent]:
-        limit = SPATIAL["pagination_limit"]
+        limit = SPATIAL["limits"].get(slide.content_type, SPATIAL["limits"]["default"])
         if not slide.items or len(slide.items) <= limit:
             return [slide]
             

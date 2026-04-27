@@ -12,9 +12,9 @@
   --accent-secondary: 190 80% 50%; /* Cyan Star */
   --accent-gold: 45 60% 55%;
   
-  font-family: 'Outfit', sans-serif !important;
-  color: hsl(var(--text-main)) !important;
-  background: hsl(var(--bg-primary)) !important;
+  font-family: var(--font-base, 'Outfit', sans-serif) !important;
+  color: var(--slide-text, hsl(var(--text-main))) !important;
+  background: var(--slide-bg, hsl(var(--bg-primary))) !important;
   padding: 3rem 4rem !important;
   position: relative;
   overflow: hidden !important;
