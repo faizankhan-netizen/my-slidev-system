@@ -20,7 +20,7 @@ class SlideContent:
     stat_label: str = ""
     quote_text: str = ""
     quote_author: str = ""
-    emoji: str = "✨"
+    emoji: str = ""
     
     # NEW V3: Multi-Modal Payloads
     chart_type: str = "" # bar, line, pie, radar
@@ -39,3 +39,8 @@ class SlideContent:
     bg_tone: str = "dark" # dark, light
     custom_bg: Optional[str] = None
     custom_text: Optional[str] = None
+
+    def __post_init__(self):
+        # Internal flag to check if energy was manually specified
+        # This allows the RhythmEngine/ArcComposer to provide defaults without overriding user intent.
+        self._energy_explicit = self.energy != "medium"

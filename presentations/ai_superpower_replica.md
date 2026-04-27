@@ -1,468 +1,245 @@
-
 ---
 layout: center
 class: style-ai-superpower
 bg_video_url: https://assets.mixkit.co/videos/preview/mixkit-digital-network-of-moving-points-and-lines-41315-large.mp4
 style: |
-
   --slide-bg: #1A1F5E;
   --slide-text: #FFFFFF;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
 <CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; justify-content: center; align-items: center; text-align: center; pointer-events:none;">
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}' style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto;">ACTIVATE!</div>
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;justify-content:center;align-items:center;text-align:center;pointer-events:none;">
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}'><div class="pill">ACTIVATE!</div></div>
   <h1 v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}' style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; text-align: center;">AI SUPERPOWER</h1>
   <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 200}}' style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; text-align: center; margin: 0 auto;">The Paintbrush for your Imagination</div>
 </div>
 
-
-
 ---
 layout: center
 class: style-ai-superpower
 style: |
-
   --slide-bg: #FF6B35;
-  --slide-text: #1A1F5E;
+  --slide-text: #1A1A1A;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-<CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; justify-content: center; align-items: center; text-align: center; pointer-events:none;">
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}' style="font-size: 4rem; margin-bottom: 1rem;">🪄</div>
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}' style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto;">THE START</div>
-  <h1 v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 200}}' style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; text-align: center; text-transform: uppercase;">Module 01: The Magic</h1>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;justify-content:center;align-items:center;text-align:center;pointer-events:none;">
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}' style="font-size:4rem;margin-bottom:1rem;">🪄</div>
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}'><div class="pill">THE START</div></div>
+  <h1 v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 200}}' style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; text-align: center;text-transform:uppercase;">Module 01: The Magic</h1>
   <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 300}}' style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; text-align: center; margin: 0 auto;">How do machines actually 'grow a brain'?</div>
 </div>
 
-
-
 ---
 layout: default
 class: style-ai-superpower
 style: |
-
   --slide-bg: #12173A;
   --slide-text: #FFFFFF;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-<CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; pointer-events:none;">
-  <div style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto;"></div>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;pointer-events:none;">
   <h1 style="font-size: 2.2rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; ">What is an Algorithm?</h1>
-  <div style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto;  max-width: 60%;">No computers needed. An algorithm is just a recipe. Think of it as a set of instructions for a robot with NO common sense.</div>
-  <div v-click style="margin-top: auto; padding: 1.5rem; background: color-mix(in srgb, var(--slide-text) 5%, transparent); border-left: 4px solid var(--accent-primary, cyan); border-radius: 8px;">
-    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🍳</div>
-    <div style="font-weight: 700;">The Recipe Analogy</div>
+  <div style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; max-width:60%;">No computers needed. An algorithm is just a recipe. Think of it as a set of instructions for a robot with NO common sense.</div>
+  <div v-click style="margin-top:auto;padding:1.5rem;background:color-mix(in srgb,var(--slide-text) 5%,transparent);border-left:4px solid var(--accent-primary);border-radius:8px;">
+    <div style="font-size:2rem;margin-bottom:0.5rem;">🍳</div>
+    <div style="font-weight:700;">The Recipe Analogy</div>
   </div>
 </div>
-
-
 
 ---
 layout: center
 class: style-ai-superpower
 style: |
-
   --slide-bg: #12173A;
   --slide-text: #FFFFFF;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-<CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; justify-content: center; align-items: center; text-align: center; pointer-events:none;">
-  <div style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto; background: rgba(255,0,0,0.2); border-color: rgba(255,0,0,0.5); color: #ff9999;">ACTIVITY BREAK</div>
-  <div style="font-size: 4rem; margin-bottom: 1rem;">🐕</div>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;justify-content:center;align-items:center;text-align:center;pointer-events:none;">
+  <div style="display:inline-block;padding:4px 16px;border-radius:4px;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.8rem;background:rgba(255,0,0,0.2);border:1px solid rgba(255,0,0,0.5);color:#ff9999;">ACTIVITY BREAK</div>
+  <div style="font-size:4rem;margin-bottom:1rem;">🐕</div>
   <h1 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; text-align: center;">The Puppy Game</h1>
-  <div v-click style="background: rgba(255,255,255,0.07); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; overflow: hidden; pointer-events: auto; max-width: 70%; margin: 2rem auto; font-size: 1.5rem; font-weight: 700;">
-    Reinforcement Learning in Action! One student is the Puppy. The class is the Training Data.
-  </div>
+  <div v-click class="card" style="max-width:70%;margin:2rem auto;font-size:1.5rem;font-weight:700;">Reinforcement Learning in Action! One student is the Puppy. The class is the Training Data.</div>
 </div>
-
-
 
 ---
 layout: center
 class: style-ai-superpower
 style: |
-
   --slide-bg: #ECFDF5;
-  --slide-text: #1A1F5E;
+  --slide-text: #1A1A1A;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-<CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; justify-content: center; align-items: center; text-align: center; pointer-events:none;">
-  <div v-motion :initial='{"opacity": 0, "x": -30}' :enter='{"opacity": 1, "x": 0, "transition": {"duration": 500, "delay": 0}}' style="font-size: 4rem; margin-bottom: 1rem;">🇮🇳</div>
-  <div v-motion :initial='{"opacity": 0, "x": -30}' :enter='{"opacity": 1, "x": 0, "transition": {"duration": 500, "delay": 100}}' style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto;">LOCAL IMPACT</div>
-  <h1 v-motion :initial='{"opacity": 0, "x": -30}' :enter='{"opacity": 1, "x": 0, "transition": {"duration": 500, "delay": 200}}' style="font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; text-align: center; text-transform: uppercase;">Module 02: AI Around You</h1>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;justify-content:center;align-items:center;text-align:center;pointer-events:none;">
+  <div v-motion :initial='{"opacity": 0, "x": -30}' :enter='{"opacity": 1, "x": 0, "transition": {"duration": 500, "delay": 0}}' style="font-size:4rem;margin-bottom:1rem;">🇮🇳</div>
+  <div v-motion :initial='{"opacity": 0, "x": -30}' :enter='{"opacity": 1, "x": 0, "transition": {"duration": 500, "delay": 100}}'><div class="pill">LOCAL IMPACT</div></div>
+  <h1 v-motion :initial='{"opacity": 0, "x": -30}' :enter='{"opacity": 1, "x": 0, "transition": {"duration": 500, "delay": 200}}' style="font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; text-align: center;text-transform:uppercase;">Module 02: AI Around You</h1>
   <div v-motion :initial='{"opacity": 0, "x": -30}' :enter='{"opacity": 1, "x": 0, "transition": {"duration": 500, "delay": 300}}' style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; text-align: center; margin: 0 auto;">Not in Silicon Valley. In your gaon, gali, aur ghar.</div>
 </div>
 
-
-
 ---
 layout: default
 class: style-ai-superpower
 style: |
-
   --slide-bg: #FFFBEB;
-  --slide-text: #1A1F5E;
+  --slide-text: #1A1A1A;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-<CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; pointer-events:none;">
-  <div style="display: flex; width: 100%; height: 100%; gap: 3rem;">
-    <div style="flex: 1.2; display: flex; flex-direction: column;">
-      <div style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto;"></div>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;pointer-events:none;">
+  <div style="display:flex;width:100%;height:100%;gap:3rem;">
+    <div style="flex:1.2;display:flex;flex-direction:column;">
       <h1 style="font-size: 2.2rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; ">01: Kheti (Agriculture)</h1>
       <div style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; ">AI saves the crop before you can see the disease. Satellites scan the farm and send a WhatsApp alert.</div>
-      <div v-click style="margin-top: auto; padding: 1.5rem; background: color-mix(in srgb, var(--slide-text) 5%, transparent); border-radius: 8px; border-left: 4px solid var(--accent-primary, cyan);">
-        <span style="font-weight: 900; font-size: 0.8rem; opacity: 0.5;">CASE HIGHLIGHT</span><br/>
-        <div style="font-size: 1.1rem; font-weight: 700; margin-top: 0.5rem;">10-Day Early Warning</div>
+      <div v-click style="margin-top:auto;padding:1.5rem;background:color-mix(in srgb,var(--slide-text) 5%,transparent);border-radius:8px;border-left:4px solid var(--accent-primary);">
+        <span style="font-weight:900;font-size:0.8rem;opacity:0.5;">CASE HIGHLIGHT</span><br/>
+        <div style="font-size:1.1rem;font-weight:700;margin-top:0.5rem;">10-Day Early Warning</div>
       </div>
     </div>
-    <div v-click style="flex: 0.8; background: color-mix(in srgb, var(--slide-text) 3%, transparent); border-radius: 12px; border: 1px dashed color-mix(in srgb, var(--slide-text) 10%, transparent); display: flex; align-items: center; justify-content: center; padding: 2rem;">
-      <div style="text-align: center;">
-         <div style="font-size: 5rem; margin-bottom: 1rem;">🌾</div>
-         <div style="font-weight: 900; letter-spacing: 2px;">10 Days</div>
-         <div style="opacity: 0.6; font-size: 0.9rem;">Early Warning</div>
-      </div>
+    <div v-click style="flex:0.8;background:color-mix(in srgb,var(--slide-text) 3%,transparent);border-radius:12px;border:1px dashed color-mix(in srgb,var(--slide-text) 10%,transparent);display:flex;align-items:center;justify-content:center;padding:2rem;">
+      <div style="text-align:center;"><div style="font-size:5rem;margin-bottom:1rem;">🌾</div><div style="font-weight:900;letter-spacing:2px;"><div class="stat">10 Days</div></div><div style="opacity:0.6;font-size:0.9rem;">Early Warning</div></div>
     </div>
   </div>
 </div>
-
-
 
 ---
 layout: default
 class: style-ai-superpower
 style: |
-
   --slide-bg: #1A1F5E;
   --slide-text: #FFFFFF;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-<CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; pointer-events:none;">
-  <div style="display: flex; width: 100%; height: 100%; gap: 3rem;">
-    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}' style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto;">CINEMA</div>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;pointer-events:none;">
+  <div style="display:flex;width:100%;height:100%;gap:3rem;">
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}'><div class="pill">CINEMA</div></div>
       <h1 v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}' style="font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; ">02: Bollywood Magic</h1>
       <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 200}}' style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; ">The naale ki ladaai in RRR—98% of the waterfall battle was AI-composited VFX.</div>
-      
     </div>
-    <div v-motion :initial="{opacity:0, x:50}" :enter="{opacity:1, x:0}" style="flex: 1.2; padding: 1rem;"><iframe src='https://www.youtube.com/embed/VIs_L3D6qgE?controls=1&rel=0' style='width: 100%; height: 100%; border: none; border-radius: 12px;'></iframe></div>
+    <div v-motion :initial="{opacity:0,x:50}" :enter="{opacity:1,x:0}" style="flex:1.2;padding:1rem;"><iframe src='https://www.youtube.com/embed/VIs_L3D6qgE?controls=1&rel=0' style='width:100%;height:100%;border:none;border-radius:12px;'></iframe></div>
   </div>
 </div>
-
-
 
 ---
 layout: default
 class: style-ai-superpower
 style: |
-
   --slide-bg: #0F172A;
   --slide-text: #FFFFFF;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-<CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;justify-content:center;align-items:center;text-align:center;pointer-events:none;">
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}'><div class="pill">SAVING LIVES</div></div>
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}'><div class="stat">3 Years</div></div>
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 200}}' style="font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;">Earlier Detection</div>
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 300}}' style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; text-align: center; margin: 0 auto;margin-top:1.5rem;">Wadhwani AI detects Tuberculosis from a simple cough recording. Screening an entire village in one morning.</div>
 </div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; justify-content: center; align-items: center; text-align: center; pointer-events:none;">
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}' style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto;">SAVING LIVES</div>
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}' style="font-size: 8rem; font-weight: 900; line-height: 1; color: var(--accent-primary, orange); text-shadow: 0 0 40px rgba(255,165,0,0.3); margin: 1rem 0;">3 Years</div>
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 200}}' style="font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">Earlier Detection</div>
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 300}}' style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; text-align: center; margin: 0 auto; margin-top: 1.5rem;">Wadhwani AI detects Tuberculosis from a simple cough recording. Screening an entire village in one morning.</div>
-</div>
-
-
 
 ---
 layout: center
 class: style-ai-superpower
 style: |
-
   --slide-bg: #4C0519;
   --slide-text: #FFFFFF;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-<CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; justify-content: center; align-items: center; text-align: center; pointer-events:none;">
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}' style="font-size: 4rem; margin-bottom: 1rem;">🧠</div>
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}' style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto;"></div>
-  <h1 v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 200}}' style="font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; text-align: center; text-transform: uppercase;">Module 03: You are the AI</h1>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;justify-content:center;align-items:center;text-align:center;pointer-events:none;">
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}' style="font-size:4rem;margin-bottom:1rem;">🧠</div>
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}'></div>
+  <h1 v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 200}}' style="font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; text-align: center;text-transform:uppercase;">Module 03: You are the AI</h1>
   <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 300}}' style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; text-align: center; margin: 0 auto;">No computers. Just your brain.</div>
 </div>
-
-
 
 ---
 layout: default
 class: style-ai-superpower
 style: |
-
   --slide-bg: #12173A;
   --slide-text: #FFFFFF;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-<CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; pointer-events:none;">
-  <div style="display:inline-block; width: fit-content; padding:4px 12px; border-radius:30px; font-size:10px; font-weight:900; letter-spacing:2px; text-transform:uppercase; margin-bottom: 0.8rem; border: 1px solid rgba(255,255,255,0.2); white-space: nowrap; background: rgba(255,255,255,0.1); pointer-events:auto;"></div>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;pointer-events:none;">
   <h1 style="font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; ">Program Your Robot</h1>
   <div style="font-size: 1.1rem; line-height: 1.5; max-width: 100%; opacity: 0.8; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; pointer-events: auto; ">Mission: Make your teammate draw a house. But you can't use the words 'draw' or 'house'.</div>
-  <div style="margin-top: 1rem; width: 100%;">
-
-<div v-click style="display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 1rem;">
-  <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent-primary, cyan); opacity: 0.8;">01</div>
-  <div style="background: rgba(255,255,255,0.07); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; overflow: hidden; pointer-events: auto; padding: 1rem;">Round 1: Write Instructions</div>
+  <div style="margin-top:1rem;width:100%;"><div v-click style="display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:1rem;"><div style="font-size:1.5rem;font-weight:900;color:var(--accent-primary);opacity:0.8;">01</div><div v-click class="card" style="padding:1rem;">Round 1: Write Instructions</div></div><div v-click style="display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:1rem;"><div style="font-size:1.5rem;font-weight:900;color:var(--accent-primary);opacity:0.8;">02</div><div v-click class="card" style="padding:1rem;">Round 2: Fix the Chaos</div></div><div v-click style="display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:1rem;"><div style="font-size:1.5rem;font-weight:900;color:var(--accent-primary);opacity:0.8;">03</div><div v-click class="card" style="padding:1rem;">Round 3: Iteration</div></div></div>
 </div>
-
-<div v-click style="display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 1rem;">
-  <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent-primary, cyan); opacity: 0.8;">02</div>
-  <div style="background: rgba(255,255,255,0.07); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; overflow: hidden; pointer-events: auto; padding: 1rem;">Round 2: Fix the Chaos</div>
-</div>
-
-<div v-click style="display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 1rem;">
-  <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent-primary, cyan); opacity: 0.8;">03</div>
-  <div style="background: rgba(255,255,255,0.07); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; overflow: hidden; pointer-events: auto; padding: 1rem;">Round 3: Iteration</div>
-</div>
-
-  </div>
-</div>
-
-
 
 ---
 layout: center
 class: style-ai-superpower
 bg_video_url: https://assets.mixkit.co/videos/preview/mixkit-futuristic-technology-background-with-lines-and-dots-34445-large.mp4
 style: |
-
   --slide-bg: #1A1F5E;
   --slide-text: #FFFFFF;
   --accent-primary: #06D6A0;
   --accent-secondary: #06D6A0;
   --accent-tertiary: #06D6A0;
   --font-base: 'Fredoka', 'Montserrat', sans-serif;
-
 ---
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Montserrat:wght@400;900&display=swap" rel="stylesheet" />
 <CinematicBackdrop v-model:url="$frontmatter.bg_video_url" :url="$frontmatter.bg_video_url" />
-
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-  <div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div>
-  <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div>
-</div>
-
-
-<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50">
-  <div v-for="i in $nav.total" :key="i" 
-       :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']">
-  </div>
-</div>
-
-
-<div style="position:relative; z-index:10; height:100%; display:flex; flex-direction:column; justify-content: center; align-items: center; text-align: center; pointer-events:none;">
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden"><div class="absolute top-10 left-10 w-20 h-20 border-2 border-[var(--slide-text)] rounded-full animate-pulse"></div><div class="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--slide-text)] rotate-45 opacity-50"></div><div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--slide-text)] rounded-full"></div></div>
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-30 hover:opacity-100 transition-opacity duration-500 z-50"><div v-for="i in $nav.total" :key="i" :class="['w-1.5 h-1.5 rounded-full transition-all duration-300', i === $nav.currentPage ? 'bg-[var(--accent-primary)] w-4' : 'bg-[var(--slide-text)] opacity-50']"></div></div>
+<div style="position:relative;z-index:10;display:flex;flex-direction:column;height:100%;justify-content:center;align-items:center;text-align:center;pointer-events:none;">
   <h1 v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 0}}' style="font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 0.5rem; width: 100%; overflow-wrap: break-word; word-break: keep-all; pointer-events: auto; text-align: center;">Superpower: ACTIVATED.</h1>
-  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}' style="font-size: 1.5rem; opacity: 0.8;">The ideas were yours. AI was just the paintbrush.</div>
+  <div v-motion :initial='{"opacity": 0, "y": 50, "scale": 0.9}' :enter='{"opacity": 1, "y": 0, "scale": 1, "transition": {"type": "spring", "stiffness": 250, "damping": 15, "delay": 100}}' style="font-size:1.5rem;opacity:0.8;">The ideas were yours. AI was just the paintbrush.</div>
 </div>
-

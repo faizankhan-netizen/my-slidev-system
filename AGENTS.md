@@ -96,16 +96,20 @@ Write the slides using the component-driven system. Then run the **QA Protocol**
 
 ---
 
-## 🎬 Cinematic Engine V3 (Python Pipeline)
+## 🎬 Cinematic Engine V5.1 (Scholarly & Design Sovereignty)
 
-For high-end, data-aware decks, use the Python pipeline in `scripts/slide_engine/`:
-1. **The Config**: All magic numbers and styles live in `config.py`. Edit this file to change the "feel" of the deck.
-2. **Component Sovereignty**: Media backgrounds are handled by the `<CinematicBackdrop />` Vue component.
-3. **BoundGuard Intelligence**: 
-   - **No-Bleed Rule**: All infographics (Cycles/Charts) have a mandatory 160px title buffer.
-   - **Auto-Scale**: Titles/Descriptions shrink based on character count automatically.
-4. **Clean Code Protocol**: Move complex HTML logic into `.vue` components. Python should only handle layout and data-mapping.
+The engine has been refactored to separate **Narrative Intent** (Python) from **Visual Aesthetics** (CSS).
+
+1. **Design Sovereignty**: Python scripts must NEVER emit visual inline styles (colors, borders, shadows). They only emit semantic classes (`.card`, `.pill`, `.stat`). Visuals are locked in `styles/*.css`.
+2. **Topic Intelligence**: Use the `TopicAnalyzer` to auto-resolve archetypes based on `topic`, `audience`, and `tone`. Manual overrides are discouraged unless for specific branding.
+3. **Scholarly Intelligence (`style-research`)**: Specialized archetype for Academic/Dissertation content. Features high-contrast vertical stacks, `.hypothesis-box` components, and Ivory/Teal/Navy palette.
+4. **Narrative Pacing (ArcComposer)**: Decks follow a structured energy arc (Hook → Context → Body → Climax → Reflection → Closer). Use the `arc_type` parameter in the `Pipeline` to control pacing.
+5. **Vibrant Variety**: Backgrounds for archetypes like `style-school` now rotate both **Color Palette** and **Texture Variants** (Grid, Lined, Dots) automatically per slide.
+6. **Automatic Contrast & Specificity**: 
+   - The `Orchestrator` uses luminance math to auto-switch text between Dark/Light.
+   - **Specificity Fix**: Manual `custom_bg` settings now automatically suppress archetype "Variants" (which often have forced dark backgrounds) to respect user intent.
+7. **Opt-In Visuals**: Removed default "Sparkle" (`✨`) icons in `schema.py` to ensure a minimalist, professional canvas for high-stakes presentations.
 
 ---
 
-*"Maintain the DNA. Respect the Guide. Activate the Superpower."* ⚡
+*"Intent in Python. Soul in CSS. Intelligence in the Arc."* ⚡
